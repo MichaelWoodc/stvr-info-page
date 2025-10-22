@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leaderboard — Dark Theme</title>
+
+<style>
+/* === GLOBAL PAGE STYLES === */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #000; /* pure black */
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* === HEADINGS === */
+h2 {
+  color: #4da3ff;
+  text-shadow: 0 0 10px #0044ff66;
+  margin-bottom: 25px;
+}
+
+/* === TABLE BASE === */
+table {
+  width: 90%;
+  max-width: 900px;
+  border-collapse: collapse;
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+th, td {
+  text-align: left;
+  padding: 20px 22px; /* Increased padding for taller rows */
+  vertical-align: middle;
+}
+
+th {
+  background-color: #111;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+  border-bottom: 1px solid #222;
+}
+
+tr {
+  transition: background 0.3s ease;
+}
+
+tr:nth-child(even) {
+  background-color: #0d0d0d;
+}
+
+tr:hover {
+  background-color: #1a1a1a;
+}
+
+/* === IMAGES === */
+img {
+  width: 70px;  /* larger photos */
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover zoom effect */
+img:hover {
+  transform: scale(4.0);
+  box-shadow: 0 0 10px #4da3ff88;
+  z-index: 10;
+}
+
+/* === LINKS === */
+a {
+  color: #4da3ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* === TOP 3 RANK STYLES === */
+.gold {
+  background: #0a0a00;
+  box-shadow: 0 0 10px #ffd70055;
+  animation: pulseGold 3s infinite;
+}
+.silver {
+  background: #0f0f0f;
+  box-shadow: 0 0 10px #c0c0c055;
+  animation: pulseSilver 3s infinite;
+}
+.bronze {
+  background: #0d0900;
+  box-shadow: 0 0 10px #cd7f3255;
+  animation: pulseBronze 3s infinite;
+}
+
+/* === ANIMATIONS === */
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 8px #ffd70055; }
+  50% { box-shadow: 0 0 20px #ffd700aa; }
+}
+@keyframes pulseSilver {
+  0%, 100% { box-shadow: 0 0 8px #c0c0c055; }
+  50% { box-shadow: 0 0 20px #c0c0c0aa; }
+}
+@keyframes pulseBronze {
+  0%, 100% { box-shadow: 0 0 8px #cd7f3255; }
+  50% { box-shadow: 0 0 20px #cd7f32aa; }
+}
+</style>
+</head>
+
+<body>
+
+<h2>🏆 Leaderboard</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Photo</th>
+      <th>Name</th>
+      <th>Properties</th>
+      <th>Complaints</th>
+      <th>Links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="gold">
+      <td>🥇 1</td>
+      <td><img src="owners/patrick_forelli/patrick.jpg" alt="User 1" /></td>
+      <td>Patrick Forelli</td>
+      <td>3</td>
+      <td>5+</td>
+      <td><a href="owners/patrick_forelli/patrick.html#">Profile</a></td>
+    </tr>
+    <tr class="silver">
+      <td>🥈 2</td>
+      <td><img src="https://via.placeholder.com/70" alt="User 2" /></td>
+      <td>Bob Smith</td>
+      <td>19</td>
+      <td>120</td>
+      <td><a href="#">Profile</a></td>
+    </tr>
+    <tr class="bronze">
+      <td>🥉 3</td>
+      <td><img src="https://via.placeholder.com/70" alt="User 3" /></td>
+      <td>Carla Ruiz</td>
+      <td>17</td>
+      <td>110</td>
+      <td><a href="#">Profile</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><img src="https://via.placeholder.com/70" alt="User 4" /></td>
+      <td>Daniel Kim</td>
+      <td>14</td>
+      <td>95</td>
+      <td><a href="#">Profile</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><img src="https://via.placeholder.com/70" alt="User 5" /></td>
+      <td>Ella Tran</td>
+      <td>11</td>
+      <td>88</td>
+      <td><a href="#">Profile</a></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

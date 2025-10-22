@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Leader Profile</title>
+<style>
+/* === PAGE BASE === */
+body {
+  margin: 0;
+  padding: 40px;
+  background-color: #000;
+  color: #eee;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+/* === PROFILE PHOTO === */
+.profile-photo {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #333;
+  box-shadow: 0 0 20px #111;
+}
+
+.profile-photo h2 {
+  margin-top: 15px;
+  color: #4da3ff;
+  text-shadow: 0 0 10px #0044ff66;
+}
+
+/* LinkedIn link style */
+.profile-photo a {
+  color: #4da3ff;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+  transition: text-shadow 0.2s ease;
+}
+.profile-photo a:hover {
+  text-shadow: 0 0 8px #4da3ff;
+}
+
+/* === CONTENT AREA === */
+.content {
+  flex: 1;
+  max-width: 700px;
+}
+
+.content h3 {
+  color: #4da3ff;
+  text-shadow: 0 0 8px #0044ff66;
+  border-bottom: 1px solid #222;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+/* === SLIDESHOW === */
+.slideshow {
+  position: relative;
+  margin-top: 20px;
+  background-color: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  text-align: center;
+}
+
+.slideshow img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: opacity 0.4s ease;
+}
+
+.caption {
+  margin-top: 12px;
+  color: #ccc;
+  font-size: 0.95em;
+  line-height: 1.3em;
+}
+
+/* === SLIDESHOW CONTROLS === */
+.button-container {
+  margin-top: 12px;
+}
+
+button {
+  background-color: #111;
+  color: #4da3ff;
+  border: 1px solid #4da3ff55;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #4da3ff22;
+  transform: scale(1.05);
+}
+
+/* === YOUTUBE VIDEO SECTION === */
+.video-section {
+  margin-top: 30px;
+}
+
+.video-section h3 {
+  color: #4da3ff;
+  text-shadow: 0 0 8px #0044ff66;
+  border-bottom: 1px solid #222;
+  padding-bottom: 5px;
+}
+
+.video-wrapper {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 315px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+</style>
+</head>
+
+<body>
+
+  <!-- Profile photo and name -->
+  <div class="profile-photo">
+    <img src="patrick.jpg" alt="Leader Photo" />
+    <h2>Patrick Forelli</h2>
+    <a href="https://www.linkedin.com/in/patrick-forelli/" target="_blank">LinkedIn Profile</a>
+  </div>
+
+  <!-- Content: Notes, Slideshow, Videos -->
+  <div class="content">
+    <h3>Details & Notes</h3>
+    <p>
+      Patrick owns a minimum of 3 Airbnb properties, colloquially known as “party houses” in the surrounding area. 
+      He has received over 5 complaints from neighbors regarding noise and disturbances, 
+      but has managed to maintain a high occupancy overall.
+    </p>
+
+    <!-- Slideshow -->
+    <div class="slideshow">
+      <img id="slideImage" src="complaints/complaint_1.png" alt="Complaint image">
+      <div class="caption" id="slideCaption"></div>
+
+      <div class="button-container">
+        <button onclick="prevSlide()">⟵ Previous</button>
+        <button onclick="nextSlide()">Next ⟶</button>
+      </div>
+    </div>
+
+    <!-- YouTube Video Section -->
+    <div class="video-section">
+      <h3>Related Videos</h3>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/r2nPxOJlNd0?si=GOon435qvzgTpjAk" 
+          title="YouTube video player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen></iframe>
+
+        <iframe src="https://www.youtube.com/embed/E4NYwe-brgI?si=uAIRD9heKLkAnZdo" 
+          title="YouTube video player" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+<script>
+// === COMPLAINTS SLIDESHOW ===
+const slides = [
+  { 
+    src: "complaints/complaint_1.png", 
+    caption: `Issue #1: Advertises illegal occupancy limit. Law states 2 adults per bedroom, and an additional 2, which would make 8. His listing advertises capacity for 10!<br>
+              <a href="complaints/stvr_rules.pdf" target="_blank" style="color:#4da3ff; text-decoration:none;">Source: STVR rules PDF</a> | 
+              <a href="https://www.vrbo.com/3799837" target="_blank" style="color:#4da3ff; text-decoration:none;">Listing</a>`
+  },
+  { 
+    src: "complaints/complaint_2.jpg", 
+    caption: `Parking issues and late-night gatherings. No parking diagram provided as per rules and regulations, creating parking problems.
+              <!-- Add source link here -->`
+  },
+  { 
+    src: "complaints/complaint_3.jpg", 
+    caption: `Parking issues and late-night gatherings. No parking diagram provided as per rules and regulations, creating parking problems.
+              <!-- Add source link here -->`
+  }
+];
+
+let currentIndex = 0;
+const imgEl = document.getElementById("slideImage");
+const captionEl = document.getElementById("slideCaption");
+
+function showSlide(index) {
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+  currentIndex = index;
+
+  imgEl.style.opacity = 0;
+  setTimeout(() => {
+    imgEl.src = slides[index].src;
+    captionEl.innerHTML = slides[index].caption; // render HTML links
+    imgEl.style.opacity = 1;
+  }, 200);
+}
+
+// Initialize first slide
+showSlide(0);
+
+function nextSlide() { showSlide(currentIndex + 1); }
+function prevSlide() { showSlide(currentIndex - 1); }
+</script>
+
+</body>
+</html>

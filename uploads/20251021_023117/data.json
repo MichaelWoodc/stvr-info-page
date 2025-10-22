@@ -1,0 +1,25 @@
+{
+    "timestamp": "2025-10-21 02:31:17",
+    "date": "2025-10-21",
+    "arrival": "",
+    "departure": "",
+    "people": "",
+    "notes": "",
+    "problems": [
+        "Other",
+        ""
+    ],
+    "photos": [],
+    "video": null,
+    "cars": [
+        {
+            "style": "",
+            "color": "",
+            "license": "",
+            "instate": false,
+            "state": "",
+            "photo": null
+        }
+    ],
+    "folder": "20251021_023117"
+}

@@ -1,0 +1,37 @@
+{
+    "timestamp": "2025-10-21 01:17:47",
+    "date": "2025-10-18",
+    "arrival": "",
+    "departure": "",
+    "people": "",
+    "notes": "",
+    "problems": [
+        "Too many cars",
+        "Too many people",
+        "Noise"
+    ],
+    "photos": [
+        "68f6df3b4e404.jpg",
+        "68f6df3b4ecf6.jpg"
+    ],
+    "video": null,
+    "cars": [
+        {
+            "style": "Car",
+            "color": "",
+            "license": "",
+            "instate": false,
+            "state": "",
+            "photo": "68f6df3b4fa7d.jpg"
+        },
+        {
+            "style": "",
+            "color": "",
+            "license": "",
+            "instate": false,
+            "state": "",
+            "photo": "68f6df3b50136.jpg"
+        }
+    ],
+    "folder": "20251021_011747"
+}
