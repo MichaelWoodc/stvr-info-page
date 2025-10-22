@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airbnb Incident Timeline</title>
+<style>
+body { font-family: Arial, sans-serif; background: #f2f2f2; margin:0; padding:0; }
+header { background: #2c3e50; color: white; text-align: center; padding: 1rem; font-size: 1.5rem; }
+.container { display: flex; flex-direction: column; padding: 1rem; gap: 1.5rem; }
+@media(min-width:768px){ .container { flex-direction: row; } }
+.timeline { flex: 2; }
+.card { background: white; padding: 1rem; margin-bottom: 1rem; border-left: 4px solid #3498db; box-shadow: 0 2px 6px rgba(0,0,0,0.1); word-break: break-word;}
+.card h3 { margin-top:0;color: #3498db; }
+.tags span { background: #e74c3c; color:white; padding:0.2rem 0.5rem; margin-right:0.3rem; margin-top:0.2rem; display:inline-block; border-radius:3px; font-size:0.8rem; }
+.media img, .media video { max-width: 100%; margin-top:0.5rem; border-radius:4px; display:block; }
+.form-container { flex: 1; background: white; padding: 1rem; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.form-container h2 { margin-top:0; color: #2c3e50; }
+.form-group { margin-bottom: 1rem; }
+label { display:block; margin-bottom:0.3rem; font-weight:bold; }
+input, select, textarea, button { width:100%; padding:0.5rem; font-size:1rem; border-radius:4px; border:1px solid #ccc; box-sizing:border-box; }
+button { background: #3498db; color:white; border:none; cursor:pointer; font-size:1rem; margin-top:0.5rem; }
+.car-section { background:#ecf0f1; padding:0.5rem; margin-bottom:0.5rem; border-radius:4px; }
+table { width: 100%; border-collapse: collapse; margin-top: 0.3rem; }
+table td { vertical-align: middle; padding: 0.2rem 0; text-align:left; }
+table td:first-child { width: 30px; text-align:left; }
+
+/* Drag and drop box */
+.drop-zone { background: #ecf0f1; border: 2px dashed #ccc; border-radius: 6px; text-align: center; padding: 1rem; cursor: pointer; transition: background 0.3s ease; }
+.drop-zone.dragover { background: #d6eaf8; border-color: #3498db; }
+</style>
+</head>
+<body>
+
+<header>Airbnb Incident Timeline</header>
+
+<div class="container">
+<div class="timeline" id="timeline"></div>
+
+<div class="form-container">
+<h2>Add New Incident</h2>
+
+<div class="form-group">
+<label>Date</label>
+<input type="date" id="date">
+</div>
+<div class="form-group">
+<label>Arrival Time</label>
+<input type="time" id="arrival">
+</div>
+<div class="form-group">
+<label>Departure Time</label>
+<input type="time" id="departure">
+</div>
+<div class="form-group">
+<label># of People (optional)</label>
+<input type="number" id="people" min="0">
+</div>
+
+<div class="form-group">
+<label>Problems</label>
+<table>
+<tr><td><input type="checkbox" value="Too many cars" class="problem-checkbox"></td><td>Too many cars</td></tr>
+<tr><td><input type="checkbox" value="Too many people" class="problem-checkbox"></td><td>Too many people</td></tr>
+<tr><td><input type="checkbox" value="Noise" class="problem-checkbox"></td><td>Noise</td></tr>
+<tr><td><input type="checkbox" value="Trash" class="problem-checkbox"></td><td>Trash</td></tr>
+<tr><td><input type="checkbox" value="Other" id="otherProblem" class="problem-checkbox"></td><td>Other</td></tr>
+</table>
+<textarea id="otherNotes" rows="2" placeholder="Describe other issues (optional)"></textarea>
+</div>
+
+<div class="form-group">
+<label>Overall Photos (up to 5, optional)</label>
+<div class="drop-zone" id="photoDrop">Drop photos here or click to upload</div>
+<input type="file" id="photos" accept="image/*" multiple style="display:none;">
+</div>
+
+<div class="form-group">
+<label>Overall Video (1, optional)</label>
+<div class="drop-zone" id="videoDrop">Drop video here or click to upload</div>
+<input type="file" id="video" accept="video/*" style="display:none;">
+</div>
+
+<div class="form-group">
+<label>Notes</label>
+<textarea id="notes" rows="3"></textarea>
+</div>
+
+<div class="form-group">
+<label># of Cars (optional)</label>
+<select id="numCars">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="10+">10+</option>
+</select>
+</div>
+
+<div id="carsContainer"></div>
+<button type="button" id="addCarBtn">Add Car Info</button>
+<button type="button" onclick="addIncident()">Add Incident</button>
+</div>
+</div>
+
+<script>
+const carsContainer = document.getElementById('carsContainer');
+const addCarBtn = document.getElementById('addCarBtn');
+const numCarsSelect = document.getElementById('numCars');
+const states = ["","AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"];
+let addedCars = 0;
+
+// Prefill today’s date
+window.addEventListener('load', () => { document.getElementById('date').value = new Date().toISOString().split('T')[0]; loadIncidents(); });
+
+// Drag-and-drop
+function setupDropZone(dropId,inputId,multiple=false){
+const dropZone=document.getElementById(dropId);
+const input=document.getElementById(inputId);
+dropZone.addEventListener('click',()=>input.click());
+dropZone.addEventListener('dragover',e=>{e.preventDefault();dropZone.classList.add('dragover');});
+dropZone.addEventListener('dragleave',()=>dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop',e=>{e.preventDefault();dropZone.classList.remove('dragover');const files=e.dataTransfer.files;if(!multiple && files.length>1)return alert("Only one file allowed here.");input.files=files;dropZone.textContent=files.length?files.length+" file(s) ready":"Drop here or click to upload";});
+}
+setupDropZone('photoDrop','photos',true);
+setupDropZone('videoDrop','video',false);
+
+// Cars
+addCarBtn.addEventListener('click',()=>{
+const maxCars=numCarsSelect.value==="10+"?11:parseInt(numCarsSelect.value);
+if(addedCars>=maxCars){if(numCarsSelect.value!=="10+"){numCarsSelect.value=(parseInt(numCarsSelect.value)+1).toString();}}
+addedCars++; createCarSection(addedCars);
+});
+
+function createCarSection(index){
+const carDiv=document.createElement('div'); carDiv.className='car-section';
+carDiv.innerHTML=`
+<h4>Car ${index}</h4>
+<label>Style:</label>
+<select class="car-style"><option value="">Unknown</option><option>Car</option><option>Truck</option><option>Van</option><option>SUV</option><option>Other</option></select>
+<label>Color (optional):</label><input type="text" class="car-color" placeholder="e.g., Red">
+<label>License Plate (optional):</label><input type="text" class="car-license">
+<table><tr><td><input type="checkbox" class="car-instate"></td><td>In-State</td></tr></table>
+<label>Out-of-State (optional)</label>
+<select class="car-state">${states.map(s=>`<option value="${s}">${s===""?"None":s}</option>`).join('')}</select>
+<label>Photo (optional)</label><input type="file" class="car-photo" accept="image/*">
+`;
+carsContainer.appendChild(carDiv);
+}
+
+function gatherCars(){
+return Array.from(document.querySelectorAll('.car-section')).map(div=>{
+return{
+style:div.querySelector('.car-style').value,
+color:div.querySelector('.car-color').value,
+license:div.querySelector('.car-license').value,
+instate:div.querySelector('.car-instate').checked,
+state:div.querySelector('.car-state').value,
+photo:div.querySelector('.car-photo').files[0]||null
+};});
+}
+
+function addIncident(){
+const formData=new FormData();
+formData.append('date',document.getElementById('date').value);
+formData.append('arrival',document.getElementById('arrival').value);
+formData.append('departure',document.getElementById('departure').value);
+formData.append('people',document.getElementById('people').value);
+formData.append('notes',document.getElementById('notes').value);
+
+// Problems
+const problems=Array.from(document.querySelectorAll('.problem-checkbox:checked')).map(c=>c.value);
+const otherNotes=document.getElementById('otherNotes').value.trim();
+if(otherNotes) problems.push("Other: "+otherNotes);
+formData.append('problems',JSON.stringify(problems));
+
+// Cars
+const cars=gatherCars();
+cars.forEach((c,i)=>{
+  formData.append(`cars[${i}][style]`,c.style);
+  formData.append(`cars[${i}][color]`,c.color);
+  formData.append(`cars[${i}][license]`,c.license);
+  formData.append(`cars[${i}][instate]`,c.instate);
+  formData.append(`cars[${i}][state]`,c.state);
+  if(c.photo) formData.append(`cars[${i}][photo]`,c.photo);
+});
+
+// Overall media
+Array.from(document.getElementById('photos').files).forEach(f=>formData.append('photos[]',f));
+if(document.getElementById('video').files[0]) formData.append('video',document.getElementById('video').files[0]);
+
+// Send to PHP
+fetch('save_incident.php',{method:'POST',body:formData})
+.then(res=>res.json())
+.then(()=>{ alert("Incident saved!"); resetForm(); loadIncidents(); })
+.catch(err=>console.error("Save failed:",err));
+}
+
+function resetForm(){
+document.querySelectorAll('input,textarea').forEach(e=>{if(e.type!=='button') e.value='';});
+carsContainer.innerHTML=''; addedCars=0;
+numCarsSelect.value='0';
+document.getElementById('photoDrop').textContent="Drop photos here or click to upload";
+document.getElementById('videoDrop').textContent="Drop video here or click to upload";
+document.querySelectorAll('.problem-checkbox').forEach(cb=>cb.checked=false);
+document.getElementById('otherNotes').value='';
+}
+
+function loadIncidents(){
+fetch('get_incidents.php')
+.then(res=>res.json())
+.then(data=>{
+const timeline=document.getElementById('timeline'); timeline.innerHTML='';
+data.forEach(inc=>{
+const card=document.createElement('div'); card.className='card';
+card.innerHTML=`
+<h3>${inc.date || inc.timestamp}</h3>
+<p><strong>Arrival:</strong> ${inc.arrival || ""} | <strong>Departure:</strong> ${inc.departure || ""}</p>
+${inc.people?`<p><strong>People:</strong> ${inc.people}</p>`:''}
+<div class="tags">${(inc.problems||[]).map(p=>`<span>${p}</span>`).join('')}</div>
+<div class="media">
+${(inc.photos||[]).map(f=>`<img src="uploads/${inc.folder}/${f}" alt="photo">`).join('')}
+${inc.video?`<video src="uploads/${inc.folder}/${inc.video}" controls></video>`:''}
+</div>
+${inc.notes?`<p><strong>Notes:</strong> ${inc.notes}</p>`:''}
+${inc.cars && inc.cars.length?`<h4>Cars:</h4>${inc.cars.map(c=>`
+<p>${c.style||'Unknown'}${c.color?` (${c.color})`:''}${c.license?` - ${c.license}`:''} | ${c.instate?'In-State':(c.state?`Out-of-State: ${c.state}`:'Out-of-State')}</p>
+${c.photo?`<img src="uploads/${inc.folder}/${c.photo}" alt="car photo">`:''}
+`).join('')}`:''}
+`;
+timeline.appendChild(card);
+});
+})
+.catch(err=>console.error("Load failed:",err));
+}
+</script>
+</body>
+</html>
+

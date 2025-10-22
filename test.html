@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple File Upload Test</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 2rem; background: #f2f2f2; }
+form { background: white; padding: 1rem; border-radius: 6px; max-width: 400px; margin:auto; }
+input[type=file], button { width: 100%; padding: 0.5rem; margin: 0.5rem 0; }
+#message { margin-top: 1rem; }
+</style>
+</head>
+<body>
+
+<h2>Upload a File Test</h2>
+
+<form id="uploadForm">
+  <input type="file" name="file" id="fileInput" required>
+  <button type="submit">Upload</button>
+</form>
+
+<div id="message"></div>
+
+<script>
+document.getElementById('uploadForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const fileInput = document.getElementById('fileInput');
+  if(fileInput.files.length === 0) return;
+
+  const formData = new FormData();
+  formData.append('file', fileInput.files[0]);
+
+  fetch('upload_test.php', { method: 'POST', body: formData })
+    .then(r => r.json())
+    .then(res => {
+      document.getElementById('message').innerText = res.status + ': ' + res.message;
+    })
+    .catch(err => {
+      document.getElementById('message').innerText = 'Error: ' + err;
+    });
+});
+</script>
+
+</body>
+</html>

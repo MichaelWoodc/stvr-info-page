@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Savannah Map with Numbered Pins</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    h2 {
+      padding: 10px;
+      text-align: center;
+      background-color: #222;
+      margin: 0;
+      color: #fff;
+    }
+    #map { 
+      height: 600px; 
+      width: 100%;
+      border: 2px solid #333;
+    }
+    .numbered-pin {
+      background-color: #ff5722;
+      color: white;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      line-height: 36px;
+      font-weight: bold;
+      border: 3px solid #fff;
+      box-shadow: 0 0 5px #000;
+      cursor: pointer;
+    }
+    .leaflet-popup-content a {
+      color: #ff9800;
+      text-decoration: underline;
+      display: block;
+      margin-top: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Savannah, GA Map</h2>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    var locations = [
+      {coords: [32.0409, -81.1507], label: '1', title: '8611 Whitefield Ave', url: 'https://www.vrbo.com/3799837'},
+      {coords: [32.0104, -81.1602], label: '2', title: '9205 Garland Drive', url: 'https://www.vrbo.com/4865092'},
+      {coords: [32.0502, -81.1405], label: '3', title: '108 Backshell Rd', url: 'https://www.vrbo.com/4052419'}
+    ];
+
+    var avgLat = locations.reduce((sum, loc) => sum + loc.coords[0], 0) / locations.length;
+    var avgLng = locations.reduce((sum, loc) => sum + loc.coords[1], 0) / locations.length;
+
+    var map = L.map('map').setView([avgLat, avgLng], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    locations.forEach(function(loc) {
+      var icon = L.divIcon({
+        className: 'numbered-pin',
+        html: loc.label,
+        iconSize: [36, 36]
+      });
+
+      L.marker(loc.coords, {icon: icon}).addTo(map)
+       .bindPopup(`
+         <strong>${loc.title}</strong>
+         <a href="${loc.url}" target="_blank">Visit VRBO Listing</a>
+         <a href="patrick.html" target="_blank">Back to Patrick Forelli Profile</a>
+       `);
+    });
+  </script>
+</body>
+</html>

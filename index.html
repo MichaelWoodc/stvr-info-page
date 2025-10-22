@@ -1,190 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Leaderboard — Dark Theme</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Airbnb Incident Timeline</title>
 <style>
-/* === GLOBAL PAGE STYLES === */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #000; /* pure black */
-  color: #eee;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-}
-
-/* === HEADINGS === */
-h2 {
-  color: #4da3ff;
-  text-shadow: 0 0 10px #0044ff66;
-  margin-bottom: 25px;
-}
-
-/* === TABLE BASE === */
-table {
-  width: 90%;
-  max-width: 900px;
-  border-collapse: collapse;
-  background-color: #0a0a0a;
-  border: 1px solid #222;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-}
-
-th, td {
-  text-align: left;
-  padding: 20px 22px; /* Increased padding for taller rows */
-  vertical-align: middle;
-}
-
-th {
-  background-color: #111;
-  color: #aaa;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.9em;
-  border-bottom: 1px solid #222;
-}
-
-tr {
-  transition: background 0.3s ease;
-}
-
-tr:nth-child(even) {
-  background-color: #0d0d0d;
-}
-
-tr:hover {
-  background-color: #1a1a1a;
-}
-
-/* === IMAGES === */
-img {
-  width: 70px;  /* larger photos */
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover zoom effect */
-img:hover {
-  transform: scale(4.0);
-  box-shadow: 0 0 10px #4da3ff88;
-  z-index: 10;
-}
-
-/* === LINKS === */
-a {
-  color: #4da3ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* === TOP 3 RANK STYLES === */
-.gold {
-  background: #0a0a00;
-  box-shadow: 0 0 10px #ffd70055;
-  animation: pulseGold 3s infinite;
-}
-.silver {
-  background: #0f0f0f;
-  box-shadow: 0 0 10px #c0c0c055;
-  animation: pulseSilver 3s infinite;
-}
-.bronze {
-  background: #0d0900;
-  box-shadow: 0 0 10px #cd7f3255;
-  animation: pulseBronze 3s infinite;
-}
-
-/* === ANIMATIONS === */
-@keyframes pulseGold {
-  0%, 100% { box-shadow: 0 0 8px #ffd70055; }
-  50% { box-shadow: 0 0 20px #ffd700aa; }
-}
-@keyframes pulseSilver {
-  0%, 100% { box-shadow: 0 0 8px #c0c0c055; }
-  50% { box-shadow: 0 0 20px #c0c0c0aa; }
-}
-@keyframes pulseBronze {
-  0%, 100% { box-shadow: 0 0 8px #cd7f3255; }
-  50% { box-shadow: 0 0 20px #cd7f32aa; }
-}
+body { font-family: Arial, sans-serif; background:#f2f2f2; margin:0; padding:0; }
+header { background:#2c3e50; color:white; text-align:center; padding:1rem; font-size:1.5rem; }
+.container { display:flex; flex-direction:column; padding:1rem; gap:1.5rem; }
+@media(min-width:768px){ .container { flex-direction:row; } }
+.timeline { flex:2; }
+.card { background:white; padding:1rem; margin-bottom:1rem; border-left:4px solid #3498db; box-shadow:0 2px 6px rgba(0,0,0,0.1); word-break:break-word;}
+.card h3 { margin-top:0; color:#3498db; }
+.tags span { background:#e74c3c; color:white; padding:0.2rem 0.5rem; margin-right:0.3rem; margin-top:0.2rem; display:inline-block; border-radius:3px; font-size:0.8rem; }
+.media img, .media video { max-width:100%; margin-top:0.5rem; border-radius:4px; display:block; }
+.form-container { flex:1; background:white; padding:1rem; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+.form-container h2 { margin-top:0; color:#2c3e50; }
+.form-group { margin-bottom:1rem; }
+label { display:block; margin-bottom:0.3rem; font-weight:bold; }
+input, select, textarea, button { width:100%; padding:0.5rem; font-size:1rem; border-radius:4px; border:1px solid #ccc; box-sizing:border-box; }
+button { background:#3498db; color:white; border:none; cursor:pointer; font-size:1rem; margin-top:0.5rem; }
+.car-section { background:#ecf0f1; padding:0.5rem; margin-bottom:0.5rem; border-radius:4px; }
+table { width:100%; border-collapse: collapse; margin-top:0.3rem; }
+table td { vertical-align:middle; padding:0.2rem 0; }
+table td:first-child { width:30px; }
+table td:last-child { text-align:left; }
+.drag-drop { border:2px dashed #ccc; border-radius:6px; padding:1rem; text-align:center; cursor:pointer; color:#555; }
+.drag-drop.hover { border-color:#3498db; color:#3498db; }
 </style>
 </head>
-
 <body>
 
-<h2>🏆 Complaints Leaderboard</h2>
+<header>Airbnb Incident Timeline</header>
 
-<table>
-  <thead>
-    <tr>
-      <th>Rank</th>
-      <th>Photo</th>
-      <th>Name</th>
-      <th>Properties</th>
-      <th>Complaints</th>
-      <th>Links</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="gold">
-      <td>🥇 1</td>
-      <td><img src="owners/patrick_forelli/patrick.jpg" alt="User 1" /></td>
-      <td>Patrick Forelli</td>
-      <td>3</td>
-      <td>5+</td>
-      <td><a href="owners/patrick_forelli/patrick.html#">Profile</a></td>
-    </tr>
-    <tr class="silver">
-      <td>🥈 2</td>
-      <td><img src="https://via.placeholder.com/70" alt="User 2" /></td>
-      <td>Bob Smith</td>
-      <td>19</td>
-      <td>120</td>
-      <td><a href="#">Profile</a></td>
-    </tr>
-    <tr class="bronze">
-      <td>🥉 3</td>
-      <td><img src="https://via.placeholder.com/70" alt="User 3" /></td>
-      <td>Carla Ruiz</td>
-      <td>17</td>
-      <td>110</td>
-      <td><a href="#">Profile</a></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><img src="https://via.placeholder.com/70" alt="User 4" /></td>
-      <td>Daniel Kim</td>
-      <td>14</td>
-      <td>95</td>
-      <td><a href="#">Profile</a></td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td><img src="https://via.placeholder.com/70" alt="User 5" /></td>
-      <td>Ella Tran</td>
-      <td>11</td>
-      <td>88</td>
-      <td><a href="#">Profile</a></td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <div class="timeline" id="timeline"></div>
+
+  <div class="form-container">
+    <h2>Add New Incident</h2>
+
+    <div class="form-group">
+      <label>Date</label>
+      <input type="date" id="date">
+    </div>
+    <div class="form-group">
+      <label>Arrival Time</label>
+      <input type="time" id="arrival">
+    </div>
+    <div class="form-group">
+      <label>Departure Time</label>
+      <input type="time" id="departure">
+    </div>
+    <div class="form-group">
+      <label># of People (optional)</label>
+      <input type="number" id="people" min="0">
+    </div>
+
+    <div class="form-group">
+      <label>Problems</label>
+      <table>
+        <tr><td><input type="checkbox" class="problem-checkbox" value="Too many cars"></td><td>Too many cars</td></tr>
+        <tr><td><input type="checkbox" class="problem-checkbox" value="Too many people"></td><td>Too many people</td></tr>
+        <tr><td><input type="checkbox" class="problem-checkbox" value="Noise"></td><td>Noise</td></tr>
+        <tr><td><input type="checkbox" class="problem-checkbox" value="Trash"></td><td>Trash</td></tr>
+        <tr><td><input type="checkbox" class="problem-checkbox" value="Other" id="other-problem"></td><td>Other</td></tr>
+      </table>
+      <textarea id="other-notes" rows="2" placeholder="If Other, add notes here"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Overall Photos (up to 5, optional)</label>
+      <div id="photo-drop" class="drag-drop">Drag & Drop or Click to select</div>
+      <input type="file" id="photos" name="photos[]" multiple style="display:none;">
+      <div id="photo-preview"></div>
+    </div>
+
+    <div class="form-group">
+      <label>Overall Video (1, optional)</label>
+      <div id="video-drop" class="drag-drop">Drag & Drop or Click to select</div>
+      <input type="file" id="video" name="video" accept="video/*" style="display:none;">
+      <div id="video-preview"></div>
+    </div>
+
+    <div class="form-group">
+      <label>Notes</label>
+      <textarea id="notes" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button type="button" id="addCarBtn">Add Car Info</button>
+    </div>
+    <div id="carsContainer"></div>
+
+    <button onclick="addIncident()">Add Incident</button>
+  </div>
+</div>
+
+<script>
+const today = new Date().toISOString().substr(0,10);
+document.getElementById('date').value = today;
+
+// Drag & drop
+function setupDrop(dropEl, inputEl, previewEl){
+  dropEl.addEventListener('click', ()=>inputEl.click());
+  dropEl.addEventListener('dragover', e=>{ e.preventDefault(); dropEl.classList.add('hover'); });
+  dropEl.addEventListener('dragleave', e=>{ dropEl.classList.remove('hover'); });
+  dropEl.addEventListener('drop', e=>{
+    e.preventDefault(); dropEl.classList.remove('hover'); inputEl.files = e.dataTransfer.files;
+    showPreview(inputEl, previewEl);
+  });
+  inputEl.addEventListener('change', ()=>showPreview(inputEl, previewEl));
+}
+
+function showPreview(inputEl, previewEl){
+  previewEl.innerHTML = '';
+  Array.from(inputEl.files).forEach(file=>{
+    if(file.type.startsWith('image/')){
+      const img=document.createElement('img'); img.src=URL.createObjectURL(file); img.style.maxWidth='80px'; img.style.margin='3px';
+      previewEl.appendChild(img);
+    } else if(file.type.startsWith('video/')){
+      const vid=document.createElement('video'); vid.src=URL.createObjectURL(file); vid.controls=true; vid.style.maxWidth='120px'; vid.style.margin='3px';
+      previewEl.appendChild(vid);
+    }
+  });
+}
+
+setupDrop(document.getElementById('photo-drop'), document.getElementById('photos'), document.getElementById('photo-preview'));
+setupDrop(document.getElementById('video-drop'), document.getElementById('video'), document.getElementById('video-preview'));
+
+// Cars
+const carsContainer = document.getElementById('carsContainer');
+let carIndex = 0;
+document.getElementById('addCarBtn').addEventListener('click', addCar);
+
+function addCar(){
+  const div=document.createElement('div'); div.className='car-section'; div.dataset.index=carIndex;
+  div.innerHTML=`
+    <h4>Car ${carIndex+1}</h4>
+    <label>Style:</label>
+    <select name="cars[${carIndex}][style]">
+      <option value="">Unknown</option>
+      <option>Car</option>
+      <option>Truck</option>
+      <option>Van</option>
+      <option>SUV</option>
+      <option>Other</option>
+    </select>
+    <label>Color:</label><input type="text" name="cars[${carIndex}][color]" placeholder="Optional">
+    <table>
+      <tr>
+        <td><input type="checkbox" name="cars[${carIndex}][instate]" value="true"></td>
+        <td>In-State</td>
+      </tr>
+    </table>
+    <label>Out-of-State:</label>
+    <select name="cars[${carIndex}][state]">
+      <option value="">Select State</option>
+      ${["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"].map(s=>`<option>${s}</option>`).join('')}
+    </select>
+    <label>License Plate:</label><input type="text" name="cars[${carIndex}][license]" placeholder="Optional">
+    <label>Photo:</label><input type="file" name="cars[${carIndex}][photo]" class="car-photo" accept="image/*">
+  `;
+  carsContainer.appendChild(div);
+  carIndex++;
+}
+
+// Add incident
+function addIncident(){
+  const formData = new FormData();
+  formData.append('date', document.getElementById('date').value);
+  formData.append('arrival', document.getElementById('arrival').value);
+  formData.append('departure', document.getElementById('departure').value);
+  formData.append('people', document.getElementById('people').value);
+  formData.append('notes', document.getElementById('notes').value);
+
+  // Problems
+  const problems = Array.from(document.querySelectorAll('.problem-checkbox:checked')).map(c=>c.value);
+  if(document.getElementById('other-problem').checked){
+    problems.push(document.getElementById('other-notes').value);
+  }
+  formData.append('problems', JSON.stringify(problems));
+
+  // Overall files
+  Array.from(document.getElementById('photos').files).forEach(f=>formData.append('photos[]', f));
+  if(document.getElementById('video').files[0]) formData.append('video', document.getElementById('video').files[0]);
+
+  // Car data and files - FIXED SECTION
+  const carDivs = document.querySelectorAll('.car-section');
+  carDivs.forEach(div=>{
+    const idx = div.dataset.index;
+    
+    // Add car form data
+    const style = div.querySelector(`select[name="cars[${idx}][style]"]`).value;
+    const color = div.querySelector(`input[name="cars[${idx}][color]"]`).value;
+    const license = div.querySelector(`input[name="cars[${idx}][license]"]`).value;
+    const instate = div.querySelector(`input[name="cars[${idx}][instate]"]`).checked;
+    const state = div.querySelector(`select[name="cars[${idx}][state]"]`).value;
+    
+    formData.append(`cars[${idx}][style]`, style);
+    formData.append(`cars[${idx}][color]`, color);
+    formData.append(`cars[${idx}][license]`, license);
+    formData.append(`cars[${idx}][instate]`, instate);
+    formData.append(`cars[${idx}][state]`, state);
+    
+    // Add car photo file
+    const photoInput = div.querySelector('.car-photo');
+    if(photoInput.files[0]) formData.append(`cars[${idx}][photo]`, photoInput.files[0]);
+  });
+
+  fetch('save_incident.php', {method:'POST', body:formData})
+  .then(r=>r.json())
+  .then(res=>{
+    if(res.status==='success'){
+      loadIncidents(); // reload timeline from server
+      // reset form
+      document.getElementById('arrival').value='';
+      document.getElementById('departure').value='';
+      document.getElementById('people').value='';
+      document.getElementById('notes').value='';
+      document.querySelectorAll('.problem-checkbox').forEach(cb=>cb.checked=false);
+      document.getElementById('other-notes').value='';
+      document.getElementById('photos').value='';
+      document.getElementById('video').value='';
+      document.getElementById('photo-preview').innerHTML='';
+      document.getElementById('video-preview').innerHTML='';
+      carsContainer.innerHTML='';
+      carIndex=0;
+      alert('Incident saved!');
+    } else alert('Save failed: '+res.message);
+  }).catch(e=>alert('Save error: '+e));
+}
+
+// Load incidents from server
+function loadIncidents(){
+  const timeline = document.getElementById('timeline');
+  timeline.innerHTML = '';
+  fetch('get_incidents.php')
+    .then(r=>r.json())
+    .then(data=>{
+      data.sort((a,b)=>b.timestamp.localeCompare(a.timestamp)); // newest first
+      data.forEach(inc=>{
+        const card = document.createElement('div'); card.className='card';
+        let photosHTML = '';
+        if(inc.photos) inc.photos.forEach(p=>{
+          photosHTML += `<img src="uploads/${inc.folder}/${p}">`;
+        });
+        let videoHTML = '';
+        if(inc.video) videoHTML = `<video src="uploads/${inc.folder}/${inc.video}" controls></video>`;
+        let carsHTML = '';
+        if(inc.cars) inc.cars.forEach(c=>{
+          carsHTML += `<p>${c.style || 'Unknown'}${c.color?' ('+c.color+')':''}${c.license?' - '+c.license:''} | ${c.instate?'In-State':(c.state?'Out-of-State: '+c.state:'Out-of-State')}</p>`;
+          if(c.photo) carsHTML += `<img src="uploads/${inc.folder}/${c.photo}" style="max-width:80px;margin:3px;">`;
+        });
+        card.innerHTML = `
+          <h3>${inc.date}</h3>
+          <p><strong>Arrival:</strong> ${inc.arrival} | <strong>Departure:</strong> ${inc.departure}</p>
+          ${inc.people?'<p><strong>People:</strong> '+inc.people+'</p>':''}
+          <div class="tags">${inc.problems.map(p=>`<span>${p}</span>`).join('')}</div>
+          <div class="media">${photosHTML}${videoHTML}</div>
+          ${inc.notes?'<p><strong>Notes:</strong> '+inc.notes+'</p>':''}
+          ${carsHTML?'<h4>Cars:</h4>'+carsHTML:''}
+        `;
+        timeline.appendChild(card);
+      });
+    });
+}
+
+window.addEventListener('load', loadIncidents);
+</script>
 
 </body>
 </html>
