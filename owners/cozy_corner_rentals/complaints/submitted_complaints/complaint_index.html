@@ -26,168 +26,314 @@ a:hover {
   text-shadow: 0 0 8px #4da3ff;
 }
 
+.file-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 0;
+}
+
+.file-status {
+  width: 140px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+/* Status colors */
+.status-na {
+  background-color: #660000;
+  color: #ffb3b3;
+}
+
+.status-waiting {
+  background-color: #660000;
+  color: #ffb3b3;
+}
+
+.status-unresolved {
+  background-color: #660000;
+  color: #ffb3b3;
+}
+
+.status-response {
+  background-color: #665500;
+  color: #fff3b0;
+}
+
+.status-resolved {
+  background-color: #004d00;
+  color: #b6ffb6;
+}
 </style>
+
+<script>
+function updateStatusColors() {
+  document.querySelectorAll('.file-status').forEach(el => {
+    const text = el.innerText.trim().toLowerCase();
+
+    el.classList.remove(
+      'status-na',
+      'status-waiting',
+      'status-unresolved',
+      'status-response',
+      'status-resolved'
+    );
+
+    if (text === 'n/a') el.classList.add('status-na');
+    else if (text === 'waiting') el.classList.add('status-waiting');
+    else if (text === 'unresolved') el.classList.add('status-unresolved');
+    else if (text === 'response received') el.classList.add('status-response');
+    else if (text === 'resolved') el.classList.add('status-resolved');
+  });
+}
+
+document.addEventListener("input", updateStatusColors);
+document.addEventListener("DOMContentLoaded", updateStatusColors);
+</script>
+
 </head>
 <body>
 
 <h1>Complaint File Index</h1>
-<p>Generated: 2026-02-26 17:44:05</p>
+<p>Generated: 2026-02-27 12:24:19</p>
+            <div class="file-row" style="margin-left:0px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="1 - Google Voice Conversation Export.pdf" target="_blank">1 - Google Voice Conversation Export.pdf</a>
+                </div>
+            </div>
 
-
-            <div style="margin-left:0px; margin-top:8px;">
+            <div style="margin-left:0px; margin-top:12px;">
                 📁 <strong>2 - Airbnb</strong>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/Airbnb customer support - michael woodcock - Outlook - no action unless I share information.pdf" target="_blank">Airbnb customer support - michael woodcock - Outlook - no action unless I share information.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/Airbnb customer support - michael woodcock - Outlook - no action unless I share information.pdf" target="_blank">Airbnb customer support - michael woodcock - Outlook - no action unless I share information.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/AirBNB Occupancy Limit Complaint Ignored.jpeg" target="_blank">AirBNB Occupancy Limit Complaint Ignored.jpeg</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/AirBNB Occupancy Limit Complaint Ignored.jpeg" target="_blank">AirBNB Occupancy Limit Complaint Ignored.jpeg</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/Airbnb Safety - michael woodcock - Outlook.pdf" target="_blank">Airbnb Safety Outlook.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/Airbnb Safety - michael woodcock - Outlook.pdf" target="_blank">Airbnb Safety - michael woodcock - Outlook.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/Liability Insurance Intake Form received - michael woodcock - Outlook.pdf" target="_blank">Liability Insurance Intake Form received - Outlook.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Insurance Claim Denied</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/Liability Insurance Intake Form received - michael woodcock - Outlook.pdf" target="_blank">Liability Insurance Intake Form received - michael woodcock - Outlook.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/New message from Airbnb Support - michael woodcock - Outlook.pdf" target="_blank">New message from Airbnb Support Outlook.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/New message from Airbnb Support - michael woodcock - Outlook.pdf" target="_blank">New message from Airbnb Support - michael woodcock - Outlook.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/Re_ Airbnb customer support - michael woodcock - Outlook.pdf" target="_blank">Re_ Airbnb customer support Outlook.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-resolved" contenteditable="true">Resolved</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/Re_ Airbnb customer support - michael woodcock - Outlook.pdf" target="_blank">Airbnb customer support (was temporarily closed after first shooting)</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/We heard your concern about activity in your community - michael woodcock - Outlook(2).pdf" target="_blank">We heard your concern about activity in your community Outlook(2).pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-resolved" contenteditable="true">Resolved</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/We heard your concern about activity in your community - michael woodcock - Outlook(2).pdf" target="_blank">We heard your concern (was temporarily closed after first shooting)</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/We heard your concern about activity in your community - michael woodcock - Outlook.pdf" target="_blank">We heard your concern about activity in your community Outlook.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="2 - Airbnb/We heard your concern about activity in your community - michael woodcock - Outlook.pdf" target="_blank">We heard your concern... (recept party) </a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="2 - Airbnb/We heard your concern about activity in your community - michael woodcock - Outlook3.pdf" target="_blank">We heard your concern about activity in your community Outlook3.pdf</a>
-            </div>
-            
-            <div style="margin-left:0px; margin-top:8px;">
+            <div style="margin-left:0px; margin-top:12px;">
                 📁 <strong>3 - VRBO</strong>
             </div>
             
-            <div style="margin-left:20px; margin-top:8px;">
+            <div style="margin-left:20px; margin-top:12px;">
                 📁 <strong>Stay Neighborly VRBO platform complaint</strong>
             </div>
             
-            <div style="margin-left:40px;">
-                📄 <a href="3 - VRBO/Stay Neighborly VRBO platform complaint/2-Screenshot_25-2-2026_19535_www.stayneighborly.com.jpeg" target="_blank">2-Screenshot_25-2-2026_19535_www.stayneighborly.com.jpeg</a>
+            <div class="file-row" style="margin-left:40px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="3 - VRBO/Stay Neighborly VRBO platform complaint/Form - Stay Neighborly(2).pdf" target="_blank">Form - Stay Neighborly(2).pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:40px;">
-                📄 <a href="3 - VRBO/Stay Neighborly VRBO platform complaint/Form - Stay Neighborly(2).pdf" target="_blank">Form - Stay Neighborly(2).pdf</a>
+            <div class="file-row" style="margin-left:40px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="3 - VRBO/Stay Neighborly VRBO platform complaint/Form - Stay Neighborly.pdf" target="_blank">Form - Stay Neighborly.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:40px;">
-                📄 <a href="3 - VRBO/Stay Neighborly VRBO platform complaint/Form - Stay Neighborly.pdf" target="_blank">Form - Stay Neighborly.pdf</a>
+            <div class="file-row" style="margin-left:40px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="3 - VRBO/Stay Neighborly VRBO platform complaint/www.stayneighborly.com.jpeg" target="_blank">www.stayneighborly.com.jpeg</a>
+                </div>
             </div>
             
-            <div style="margin-left:40px;">
-                📄 <a href="3 - VRBO/Stay Neighborly VRBO platform complaint/Screenshot_25-2-2026_19358_www.stayneighborly.com.jpeg" target="_blank">Screenshot_25-2-2026_19358_www.stayneighborly.com.jpeg</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="3 - VRBO/VRBO Facebook Messenger Complaints.png" target="_blank">VRBO Facebook Messenger Complaints.png</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="3 - VRBO/VRBO Facebook Messenger Complaints.png" target="_blank">VRBO Facebook Messenger Complaints.png</a>
-            </div>
-            
-            <div style="margin-left:0px; margin-top:8px;">
+            <div style="margin-left:0px; margin-top:12px;">
                 📁 <strong>county_commisioners</strong>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="county_commisioners/building_safety - Contact Us Form.pdf" target="_blank">building_safety - Contact Us Form.pdf (Response recieved!)</a>
+
+            
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-response-received" contenteditable="true">Response Received</div>
+                <div class="file-name">
+                    📄 <a href="county_commisioners/county_complaint_email_1.pdf" target="_blank">county_complaint_email_1.pdf response recieved from district 1, thanks!</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="county_commisioners/county_complaint_email_1.pdf" target="_blank">county_complaint_email_1.pdf (Response recieved from district 1, Mr. Noha, thank you!)</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-waiting" contenteditable="true">Waiting</div>
+                <div class="file-name">
+                    📄 <a href="county_commisioners/county_complaint_email_2.pdf" target="_blank">county_complaint_email_2.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="county_commisioners/county_complaint_email_2.pdf" target="_blank">county_complaint_email_2.pdf (no response recieved yet)</a>
-            </div>
-            
-            <div style="margin-left:0px; margin-top:8px;">
+            <div style="margin-left:0px; margin-top:12px;">
                 📁 <strong>county_organizations</strong>
             </div>
-            
-            <div style="margin-left:20px;">
-                📄 <a href="county_organizations/ccpd.pdf" target="_blank">ccpd.pdf, although no response yet via email, always helpful when they show up</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-response-received" contenteditable="true">Response Received</div>
+                <div class="file-name">
+                    📄 <a href="Recent complaints/Chatham County Building Safety.pdf" target="_blank">Chatham County Building Safety.pdf</a>
+                </div>
+            </div>
+
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-response-received" contenteditable="true">Response Received</div>
+                <div class="file-name">
+                    📄 <a href="county_commisioners/building_safety - Contact Us Form.pdf" target="_blank">building_safety - Contact Us Form.pdf</a>
+                </div>
+            </div>            
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-waiting" contenteditable="true">Waiting</div>
+                <div class="file-name">
+                    📄 <a href="county_organizations/ccpd.pdf" target="_blank">ccpd.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="county_organizations/chatham_county_sheriffs_office.pdf" target="_blank">chatham_county_sheriffs_office.pdf although no response yet via email, always helpful when they show up</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-waiting" contenteditable="true">Waiting</div>
+                <div class="file-name">
+                    📄 <a href="county_organizations/chatham_county_sheriffs_office.pdf" target="_blank">chatham_county_sheriffs_office.pdf</a>
+                </div>
+            </div>
+
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-waiting" contenteditable="true">Waiting</div>
+                <div class="file-name">
+                    📄 <a href="Recent complaints/Chatham County Fire Department Form and Submission.pdf" target="_blank">Chatham County Fire Department Form and Submission.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:0px; margin-top:8px;">
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-response-received" contenteditable="true">Response Received</div>
+                <div class="file-name">
+                    📄 <a href="Recent complaints/County web form submission.pdf" target="_blank">County web form submission.pdf</a>
+                </div>
+            </div>
+            
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-waiting" contenteditable="true">Waiting</div>
+                <div class="file-name">
+                    📄 <a href="Recent complaints/sheriffs office.jpeg" target="_blank">sheriffs office.jpeg</a>
+                </div>
+            </div>            
+
+            <div style="margin-left:0px; margin-top:12px;">
                 📁 <strong>insurance - no coverage - claim denied</strong>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="insurance - no coverage - claim denied/claim denied.png" target="_blank">claim denied.png</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="insurance - no coverage - claim denied/claim denied.png" target="_blank">claim denied.png</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="insurance - no coverage - claim denied/insurance done Airbnb_ Vacation Rentals,_1... Experiences.pdf" target="_blank">insurance done Airbnb_ Vacation Rentals,_1... Experiences.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="insurance - no coverage - claim denied/insurance done Airbnb_ Vacation Rentals,_1... Experiences.pdf" target="_blank">insurance done Airbnb_ Vacation Rentals,_1... Experiences.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="insurance - no coverage - claim denied/Insurance intake form Airbnb_ Vacation Rentals, Cabi_1... Experiences.pdf" target="_blank">Insurance intake form Airbnb_ Vacation Rentals, Cabi_1... Experiences.pdf</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-unresolved" contenteditable="true">Unresolved</div>
+                <div class="file-name">
+                    📄 <a href="insurance - no coverage - claim denied/Insurance intake form Airbnb_ Vacation Rentals, Cabi_1... Experiences.pdf" target="_blank">Insurance intake form Airbnb_ Vacation Rentals, Cabi_1... Experiences.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="insurance - no coverage - claim denied/PXL_20250918_145254327.jpg" target="_blank">PXL_20250918_145254327.jpg</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="insurance - no coverage - claim denied/PXL_20250918_145254327.jpg" target="_blank">PXL_20250918_145254327.jpg</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="insurance - no coverage - claim denied/PXL_20250918_145259113.jpg" target="_blank">PXL_20250918_145259113.jpg</a>
+            <div class="file-row" style="margin-left:20px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="insurance - no coverage - claim denied/PXL_20250918_145259113.jpg" target="_blank">PXL_20250918_145259113.jpg</a>
+                </div>
             </div>
             
-            <div style="margin-left:0px; margin-top:8px;">
-                📁 <strong>Recent complaints</strong>
-            </div>
             
-            <div style="margin-left:20px; margin-top:8px;">
+            <div style="margin-left:0px; margin-top:12px;">
                 📁 <strong>bookl.ee</strong>
             </div>
             
-            <div style="margin-left:40px;">
-                📄 <a href="Recent complaints/bookl.ee/Gmail - Ongoing Violations and Public Safety Concerns at Short Term Rental Adjacent to Our Property.pdf" target="_blank">Gmail - Ongoing Violations and Public Safety Concerns at Short Term Rental Adjacent to Our Property.pdf (no response recieved yet) </a>
+            <div class="file-row" style="margin-left:40px;">
+                <div class="file-status status-waiting" contenteditable="true">Waiting</div>
+                <div class="file-name">
+                    📄 <a href="Recent complaints/bookl.ee/Gmail - Ongoing Violations and Public Safety Concerns at Short Term Rental Adjacent to Our Property.pdf" target="_blank">Gmail - Ongoing Violations and Public Safety Concerns at Short Term Rental Adjacent to Our Property.pdf</a>
+                </div>
             </div>
             
-            <div style="margin-left:20px;">
-                📄 <a href="Recent complaints/Chatham County Building Safety.pdf" target="_blank">Chatham County Building Safety.pdf (Response recieved! no notification of actions yet)</a>
-            </div>
+
+
+
             
-            <div style="margin-left:20px;">
-                📄 <a href="Recent complaints/Chatham County Fire Department Form and Submission.pdf" target="_blank">Chatham County Fire Department Form and Submission.pdf (no response recieved yet)</a>
-            </div>
+
             
-            <div style="margin-left:20px;">
-                📄 <a href="Recent complaints/County web form submission.pdf" target="_blank">County web form submission.pdf (response recieved from some county contacts) </a>
-            </div>
-            
-            <div style="margin-left:20px;">
-                📄 <a href="Recent complaints/sheriffs office.jpeg" target="_blank">sheriffs office.jpeg (no response recieved yet) </a>
-            </div>
-            
-            <div style="margin-left:0px;">
-                📄 <a href="1 - Google Voice Conversation Export.pdf" target="_blank">1 - Google Voice Conversation Export.pdf</a>
-            </div>
-            
-            <div style="margin-left:0px;">
-                📄 <a href="legal_letter_redacted.pdf" target="_blank">legal_letter_redacted.pdf</a>
+            <div class="file-row" style="margin-left:0px;">
+                <div class="file-status status-na" contenteditable="true">N/A</div>
+                <div class="file-name">
+                    📄 <a href="legal_letter_redacted.pdf" target="_blank">legal_letter_redacted.pdf</a>
+                </div>
             </div>
             
 
