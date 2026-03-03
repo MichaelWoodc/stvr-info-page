@@ -75,7 +75,7 @@
         // bookleePdf: './property_pdfs/bookl.ee.pdf'
       },
       {
-        coords: [32.06569, -81.04292],
+        coords: [32.063275, -81.042191],
         label: '3',
         title: '108 Backshell Rd',
         airbnb: 'https://www.airbnb.com/rooms/1172723872490273140',
@@ -90,7 +90,7 @@
     var avgLat = locations.reduce((sum, loc) => sum + loc.coords[0], 0) / locations.length;
     var avgLng = locations.reduce((sum, loc) => sum + loc.coords[1], 0) / locations.length;
 
-    var map = L.map('map').setView([avgLat, avgLng], 13);
+    var map = L.map('map').setView([avgLat, avgLng], 12);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
