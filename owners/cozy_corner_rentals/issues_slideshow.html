@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Issues Slideshow</title>
+<style>
+body {
+  background:#000;
+  color:#eee;
+  font-family: Segoe UI, Arial, sans-serif;
+  margin:0;
+  padding:20px;
+}
+
+.slideshow {
+  text-align:center;
+}
+
+.slideshow img {
+  width:100%;
+  min-height:450px;
+  object-fit:contain;
+  border-radius:10px;
+  box-shadow:0 0 15px rgba(0,0,0,0.7);
+}
+
+button {
+  background:#111;
+  color:#4da3ff;
+  border:1px solid #4da3ff55;
+  padding:10px 20px;
+  margin:10px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:1em;
+}
+
+button:hover {
+  background:#4da3ff22;
+}
+
+.caption {
+  margin-top:10px;
+  color:#ccc;
+}
+</style>
+</head>
+
+<body>
+<div class="slideshow">
+  <img id="slideImage" src="complaints/parking/01.jpg" alt="Slideshow image">
+  <div class="caption" id="slideCaption">01</div>
+
+  <div>
+    <button onclick="prevSlide()">⟵ Previous</button>
+    <button onclick="nextSlide()">Next ⟶</button>
+  </div>
+</div>
+
+<script>
+const images = ["01.jpg","02.jpg","03.jpg","03A.png","03B.png","04.png","05.png","06.png","07.png","10.png","11.png","12.png","13.png","14.png","15.png","16.png","17.png","18.png","19.png","20.png","21.png","22.png","23.png","24.png","25.png","26.png","27.png","28.png","29.png","30.png","31.png","32.png","33.png","34.png"];
+const captions = ["01","02","03","03A","03B","04","05","06","07","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34"];
+let index = 0;
+
+function updateSlide() {
+    document.getElementById("slideImage").src = "complaints/parking/" + images[index];
+    document.getElementById("slideCaption").textContent = captions[index];
+}
+
+function nextSlide() {
+    index = (index + 1) % images.length;
+    updateSlide();
+}
+
+function prevSlide() {
+    index = (index - 1 + images.length) % images.length;
+    updateSlide();
+}
+</script>
+
+</body>
+</html>

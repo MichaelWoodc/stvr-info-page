@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+  background:#000;
+  color:#eee;
+  font-family: Segoe UI, Arial, sans-serif;
+  margin:0;
+  padding:20px;
+}
+
+.slideshow {
+  text-align:center;
+}
+
+.slideshow img {
+  height: 400px;        /* Fixed height for all images */
+  width: auto;          /* Width adjusts to maintain aspect ratio */
+  object-fit: contain;  /* Fit image inside the frame without cropping */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+  max-width: 100%;      /* Ensure image never overflows container */
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  background:#111;
+  color:#4da3ff;
+  border:1px solid #4da3ff55;
+  padding:10px 20px;
+  margin:10px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:1em;
+}
+
+button:hover {
+  background:#4da3ff22;
+}
+
+.caption {
+  margin-top:10px;
+  color:#ccc;
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="slideshow">
+  <img id="slideImage" src="complaints/damage_examples/1.jpg" alt="Slideshow image">
+  <div class="caption" id="slideCaption">1</div>
+
+  <div>
+    <button onclick="prevSlide()">⟵ Previous</button>
+    <button onclick="nextSlide()">Next ⟶</button>
+  </div>
+</div>
+
+<script>
+const images = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg"];
+const captions = ["1","2","3","4","5"];
+let index = 0;
+
+function updateSlide() {
+    document.getElementById("slideImage").src = "complaints/damage_examples/" + images[index];
+    document.getElementById("slideCaption").textContent = captions[index];
+}
+
+function nextSlide() {
+    index = (index + 1) % images.length;
+    updateSlide();
+}
+
+function prevSlide() {
+    index = (index - 1 + images.length) % images.length;
+    updateSlide();
+}
+</script>
+
+</body>
+</html>
