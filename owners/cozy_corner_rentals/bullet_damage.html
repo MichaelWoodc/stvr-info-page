@@ -10,19 +10,41 @@ body {
   color:#eee;
   font-family: Segoe UI, Arial, sans-serif;
   margin:0;
-  padding:20px;
+  padding:10px;
+
 }
 
 .slideshow {
-  text-align:center;
+  display:flex;
+  flex-direction:column;
+  height:500px; /* fixed frame height */
+}
+
+.image-area {
+  flex:1;
+  display:flex;
+  align-items:center;      /* vertical center */
+  justify-content:center;  /* horizontal center */
 }
 
 .slideshow img {
-  width:100%;
-  max-height:400px;
+  max-width:100%;
+  max-height:380px;
   object-fit:contain;
   border-radius:10px;
   box-shadow:0 0 15px rgba(0,0,0,0.7);
+}
+
+.caption {
+  text-align:center;
+  margin-top:4px;
+  color:#ccc;
+}
+
+.button-row {
+  margin-top:auto; /* pushes buttons to bottom */
+  text-align:center;
+  padding-top:20px;
 }
 
 button {
@@ -39,24 +61,24 @@ button {
 button:hover {
   background:#4da3ff22;
 }
-
-.caption {
-  margin-top:10px;
-  color:#ccc;
-}
 </style>
 </head>
 
 <body>
 
 <div class="slideshow">
-  <img id="slideImage" src="complaints/bullet_damage/1.jpg" alt="Slideshow image">
+
+  <div class="image-area">
+    <img id="slideImage" src="complaints/bullet_damage/1.jpg" alt="Slideshow image">
+  </div>
+
   <div class="caption" id="slideCaption">1</div>
 
-  <div>
+  <div class="button-row">
     <button onclick="prevSlide()">⟵ Previous</button>
     <button onclick="nextSlide()">Next ⟶</button>
   </div>
+
 </div>
 
 <script>

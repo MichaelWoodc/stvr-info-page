@@ -69,10 +69,10 @@ button:hover {
 <div class="slideshow">
 
   <div class="image-area">
-    <img id="slideImage" src="complaints/lawn_damage/3.jpg" alt="Slideshow image">
+    <img id="slideImage" src="complaints/complaint_4.png" alt="Slideshow image">
   </div>
 
-  <div class="caption" id="slideCaption">3</div>
+  <div class="caption" id="slideCaption">complaint_4</div>
 
   <div class="button-row">
     <button onclick="prevSlide()">⟵ Previous</button>
@@ -82,12 +82,12 @@ button:hover {
 </div>
 
 <script>
-const images = ["3.jpg","4.jpg","5.jpg","6.png"];
-const captions = ["3","4","5","6"];
+const images = ["complaint_4.png","complaint_5.png","denied_insurance_claim.jpg","garland_capacity.png","over_capacity_review_whitefield.png","party_house.png","unnamed.png","whitefield_capacity.png"];
+const captions = ["complaint_4","complaint_5","denied_insurance_claim","garland_capacity","over_capacity_review_whitefield","party_house","unnamed","whitefield_capacity"];
 let index = 0;
 
 function updateSlide() {
-    document.getElementById("slideImage").src = "complaints/lawn_damage/" + images[index];
+    document.getElementById("slideImage").src = "complaints/" + images[index];
     document.getElementById("slideCaption").textContent = captions[index];
 }
 
