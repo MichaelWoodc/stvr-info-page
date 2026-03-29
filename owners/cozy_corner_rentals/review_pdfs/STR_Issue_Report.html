@@ -1,0 +1,2985 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>STR Rental Issue Report - Airbnb & VRBO</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+    h1, h2 { color: #2c3e50; }
+    .container { max-width: 1400px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 30px; font-size: 12px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; vertical-align: top; }
+    th { background-color: #2c3e50; color: white; }
+    tr:nth-child(even) { background-color: #fafafa; }
+    .summary-box { padding: 15px; background: #e8f4f8; border-left: 5px solid #3498db; margin-bottom: 30px; border-radius: 5px; }
+    .badge { display: inline-block; padding: 3px 8px; border-radius: 12px; font-size: 11px; font-weight: bold; }
+    .badge-airbnb { background: #ff5a5f; color: white; }
+    .badge-vrbo { background: #0f7b8a; color: white; }
+    hr { margin: 30px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>🏠 STR Rental Issue Report</h1>
+<p><strong>Generated:</strong> 2026-03-28 22:25:41</p>
+<p><strong>Note:</strong> Using root-word optimization - "roach" catches both "roach" AND "cockroach"</p>
+
+<div class="summary-box">
+<h2>📊 Overview</h2>
+
+    <table style="width: auto; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid #ccc; padding: 8px; background-color: #2c3e50; color: white;">Source</th>
+                <th style="border: 1px solid #ccc; padding: 8px; background-color: #2c3e50; color: white;">Original PDFs</th>
+                <th style="border: 1px solid #ccc; padding: 8px; background-color: #2c3e50; color: white;">Matches Found</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;"><span class="badge badge-airbnb">AirBNB</span></td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">212</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;"><span class="badge badge-vrbo">VRBO</span></td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">40</td>
+            </tr>
+            <tr style="background-color: #f2f2f2;">
+                <td style="border: 1px solid #ccc; padding: 8px;"><strong>TOTAL</strong></td>
+                <td style="border: 1px solid #ccc; padding: 8px;"><strong>6</strong></td>
+                <td style="border: 1px solid #ccc; padding: 8px;"><strong>252</strong></td>
+            </tr>
+        </tbody>
+    </table>
+    
+<p><strong>Phrases Searched:</strong> 63 optimized root-word terms covering pests, cleanliness, parties, maintenance, host issues, and neighbor concerns.</p>
+<p><strong>Note:</strong> Highlighted PDFs (_HIGHLIGHTED) are excluded from counts.</p>
+</div>
+
+<h2>📈 Phrase Summary by Source</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>phrase</th>
+      <th>match_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AirBNB</td>
+      <td>group</td>
+      <td>123</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>party</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>projector</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>tv</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>floor</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>birthday</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>group of</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>bachelor</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>broken</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>golf</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>large group</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>tournament</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>bathroom fixtures</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>putt putt</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>trash</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>bug</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>cleaning issue</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>delayed check-in</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>dust</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>fire pit</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>fridge</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>garbage</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>joint bachelor</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>latch</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>leave a review</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>not work</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>party house</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>pickle ball</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>ripped</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>rock</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>sleeps up to</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>sticky</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>wall damage</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>group</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>projector</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>fire pit</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>putt putt</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>tournament</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>floor</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>spa</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>super bowl</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>tlc</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>entertainment home</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>towel rack</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>tv</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>📁 File Summary (Matches per File)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>file</th>
+      <th>total_matches</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>102</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>89</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\halcyon-VRBO-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>📄 Detailed Matches</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>file</th>
+      <th>page</th>
+      <th>line_number</th>
+      <th>phrase</th>
+      <th>line_text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>3</td>
+      <td>16</td>
+      <td>projector</td>
+      <td>also had plenty coffee available, pool table with projector screen to cool</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>3</td>
+      <td>27</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>4</td>
+      <td>21</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>4</td>
+      <td>28</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>5</td>
+      <td>10</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>5</td>
+      <td>27</td>
+      <td>projector</td>
+      <td>back patio with a pool table and projector so you could watch movies or play your game.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>11</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>12</td>
+      <td>bachelor</td>
+      <td>I could not have asked for a better place to stay for my bachelor weekend! The property was in a</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>13</td>
+      <td>projector</td>
+      <td>great location and very peaceful. The porch and projector had to be my favorite part of the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>19</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>26</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>27</td>
+      <td>group</td>
+      <td>We really enjoyed this home for the size and layout for our group who was in town for soccer</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>28</td>
+      <td>tournament</td>
+      <td>tournament. Also, it was super close to the soccer fields for us. Great amenities and</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>7</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>7</td>
+      <td>31</td>
+      <td>projector</td>
+      <td>I was so relaxed it felt at home I looooooved the projector and screened in porched it was</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>9</td>
+      <td>6</td>
+      <td>party</td>
+      <td>advertised amenities and was reasonably comfortable for our party of 9. That being said there</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>9</td>
+      <td>7</td>
+      <td>party</td>
+      <td>were some things that our party struggled with; the listing advertises no more than 10 people to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>9</td>
+      <td>12</td>
+      <td>floor</td>
+      <td>unless dead bolted and a stray coax wire coming up from the floor in the master bedroom.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>9</td>
+      <td>18</td>
+      <td>party</td>
+      <td>So happy it was comfortable for your party of 9. So sorry we didn't provide enough towels, we</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>10</td>
+      <td>10</td>
+      <td>delayed check-in</td>
+      <td>Delayed Check-In: We had to wait 20 minutes past the official check-in time. After being told to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>10</td>
+      <td>12</td>
+      <td>broken</td>
+      <td>Coffee Bar Disappointment: The coffeepot was broken and there were no coffee pods provided</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>11</td>
+      <td>8</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>11</td>
+      <td>14</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>12</td>
+      <td>11</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>12</td>
+      <td>17</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>12</td>
+      <td>24</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>13</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>13</td>
+      <td>20</td>
+      <td>projector</td>
+      <td>projector on the screened in porch. We liked the location because it was not very busy but also</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>13</td>
+      <td>25</td>
+      <td>projector</td>
+      <td>The pool/ping pong table with the outdoor projector is a guest favorite!</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>14</td>
+      <td>14</td>
+      <td>projector</td>
+      <td>Patrick has a very nice home. The pool table and overhead screen projector was a plus for my</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>14</td>
+      <td>15</td>
+      <td>group</td>
+      <td>kids. Everyone slept comfortably and enough beds and bathrooms for a group of 8 if you don’t</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>14</td>
+      <td>15</td>
+      <td>group of</td>
+      <td>kids. Everyone slept comfortably and enough beds and bathrooms for a group of 8 if you don’t</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>14</td>
+      <td>31</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>2</td>
+      <td>group</td>
+      <td>wonderful stay at patrick’s home. was perfect for our group of 8. we were in town for our</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>2</td>
+      <td>group of</td>
+      <td>wonderful stay at patrick’s home. was perfect for our group of 8. we were in town for our</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>4</td>
+      <td>group</td>
+      <td>lots of space for our group. kitchen was great as we cooked a few meals. beds were comfy. we</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>10</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>11</td>
+      <td>birthday</td>
+      <td>My cousins and I had a girls trip for 1 of my cousins special birthday celebration. Patrick was a</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>14</td>
+      <td>group</td>
+      <td>throughout our stay. I will recommend Patrick’s home to friends and family for any group outing</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>18</td>
+      <td>birthday</td>
+      <td>Traci, I am so glad you were able to celebrate your cousins birthday and the place felt like home.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>25</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>17</td>
+      <td>12</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>17</td>
+      <td>13</td>
+      <td>group</td>
+      <td>Located in a Great quiet neighborhood! If you have a large group, this would definitely work well</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>17</td>
+      <td>13</td>
+      <td>large group</td>
+      <td>Located in a Great quiet neighborhood! If you have a large group, this would definitely work well</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>17</td>
+      <td>14</td>
+      <td>tv</td>
+      <td>for your stay. Large open living room and kitchen. TV’s in every room. Host responded quickly!</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>18</td>
+      <td>5</td>
+      <td>party</td>
+      <td>This is a lovely, spacious house. We were a party of 6 and everyone had a comfortable place to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>18</td>
+      <td>6</td>
+      <td>not work</td>
+      <td>sleep. The location is peaceful and quiet Too bad the grill was not working so we had to figure</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>18</td>
+      <td>29</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>19</td>
+      <td>3</td>
+      <td>floor</td>
+      <td>was dusty, one of the kitchen sponge was dirty, the freezer was dirty, the floor was dusty, and the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>19</td>
+      <td>26</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>19</td>
+      <td>28</td>
+      <td>dust</td>
+      <td>kitchen quite a bit. The main issue we had was the dust — the ceiling fans and air vent were</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>20</td>
+      <td>24</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>21</td>
+      <td>10</td>
+      <td>tournament</td>
+      <td>We enjoyed our stay at Patrick’s house while we were in town for a golf tournament at the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>21</td>
+      <td>10</td>
+      <td>golf</td>
+      <td>We enjoyed our stay at Patrick’s house while we were in town for a golf tournament at the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>21</td>
+      <td>12</td>
+      <td>projector</td>
+      <td>game on the projector! Good fun!</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>21</td>
+      <td>26</td>
+      <td>group</td>
+      <td>Patrick’s place was just right for our group. The kitchen and the screened porch are especially</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>22</td>
+      <td>8</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>22</td>
+      <td>23</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>23</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>24</td>
+      <td>11</td>
+      <td>trash</td>
+      <td>This house is clearly being renovated between the rentals. Trash bins were overflowing out front.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>24</td>
+      <td>13</td>
+      <td>latch</td>
+      <td>latch. The house looks cutely staged with cheap furniture. The owner is clearly renovating in</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>27</td>
+      <td>4</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>28</td>
+      <td>21</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>29</td>
+      <td>27</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>30</td>
+      <td>14</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>31</td>
+      <td>11</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>32</td>
+      <td>22</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>32</td>
+      <td>23</td>
+      <td>party</td>
+      <td>Patrick’s place accommodated our party of 5 perfectly! It was perfectly decorated and had plenty</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>34</td>
+      <td>16</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>34</td>
+      <td>22</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>35</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>35</td>
+      <td>24</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>36</td>
+      <td>5</td>
+      <td>fridge</td>
+      <td>The house is about 15 minutes from downtown which was what we were looking for. The fridge</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>36</td>
+      <td>6</td>
+      <td>broken</td>
+      <td>was broken when we arrived and since we only stayed two days, still broken when we left. The</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>36</td>
+      <td>13</td>
+      <td>tv</td>
+      <td>Very very clean spacious home with several activities for the family. Tv in every bedroom which</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>36</td>
+      <td>18</td>
+      <td>tv</td>
+      <td>Hey Jarvis, glad you liked the bedroom TV's</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>36</td>
+      <td>23</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>37</td>
+      <td>15</td>
+      <td>tv</td>
+      <td>We loved the huge TV and beautiful kitchen. We would stay here again in a heartbeat!</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>37</td>
+      <td>18</td>
+      <td>tv</td>
+      <td>Glad that you liked the large TV and kitchen. Take care Brittany!</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>38</td>
+      <td>7</td>
+      <td>projector</td>
+      <td>charm and modern amenities. From the beds to the porch (with pool table and projector) it was</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>39</td>
+      <td>8</td>
+      <td>group</td>
+      <td>outside but also plenty of space to lounge inside and watch a movie with a big group of friends or</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>39</td>
+      <td>8</td>
+      <td>group of</td>
+      <td>outside but also plenty of space to lounge inside and watch a movie with a big group of friends or</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>39</td>
+      <td>12</td>
+      <td>rock</td>
+      <td>Rock Hill, South Carolina</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>39</td>
+      <td>15</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>41</td>
+      <td>8</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>41</td>
+      <td>20</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>42</td>
+      <td>5</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>42</td>
+      <td>15</td>
+      <td>tv</td>
+      <td>space to enjoy. The large TV, outdoor seating area, and the open floorplan added to the overall</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>43</td>
+      <td>28</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>44</td>
+      <td>4</td>
+      <td>party</td>
+      <td>accommodations we were able to offer our guests. We were hosting a company dinner party,</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>44</td>
+      <td>5</td>
+      <td>party</td>
+      <td>and with advance notice were able to secure an awesome rate for the event. Our entire party</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>44</td>
+      <td>8</td>
+      <td>golf</td>
+      <td>for seating, pull down screen with projector and fire stick, pool/ping pong table, and a mini golf</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>44</td>
+      <td>8</td>
+      <td>projector</td>
+      <td>for seating, pull down screen with projector and fire stick, pool/ping pong table, and a mini golf</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>44</td>
+      <td>13</td>
+      <td>projector</td>
+      <td>location, and the game room/projector on the porch. I'd be happy to host you anytime in the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>45</td>
+      <td>7</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>45</td>
+      <td>8</td>
+      <td>birthday</td>
+      <td>This Air BnB was exactly what we needed to celebrate our friend’s birthday. The house was</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>45</td>
+      <td>15</td>
+      <td>floor</td>
+      <td>Great layout. Fabulous kitchen. Loved the decor, screened porch, candles. Welcoming floor</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>45</td>
+      <td>16</td>
+      <td>floor</td>
+      <td>plan. Kitchen floor dirty. Carpet very dirty!</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>48</td>
+      <td>13</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>49</td>
+      <td>3</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>51</td>
+      <td>16</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>52</td>
+      <td>4</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>9</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>17</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>28</td>
+      <td>cleaning issue</td>
+      <td>due to a cleaning issue upon arrival. Patrick was very quick to offer a solution and offered to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>10</td>
+      <td>party</td>
+      <td>- he has three varieties and I’m such a coffee snob lol. The place was perfect for our large party</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>11</td>
+      <td>tv</td>
+      <td>of 8 with 4 kids. They enjoyed their own TV in the bunk room. Very close to downtown and the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>19</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>17</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>29</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>23</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>32</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>2</td>
+      <td>bachelor</td>
+      <td>Great house and location in Savannah, my trip was a bachelor trip with some guys and the host</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>6</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>6</td>
+      <td>17</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>7</td>
+      <td>3</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>7</td>
+      <td>5</td>
+      <td>large group</td>
+      <td>accommodating for large groups</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>8</td>
+      <td>20</td>
+      <td>golf</td>
+      <td>games, a swing, and even mini-golf. Overall, a great stay</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>8</td>
+      <td>27</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>9</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>9</td>
+      <td>23</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>11</td>
+      <td>26</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>11</td>
+      <td>31</td>
+      <td>trash</td>
+      <td>There was a ton of days old garbage at the driveway with 15+ trash bags. Some spilled out onto</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>11</td>
+      <td>31</td>
+      <td>garbage</td>
+      <td>There was a ton of days old garbage at the driveway with 15+ trash bags. Some spilled out onto</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>12</td>
+      <td>5</td>
+      <td>leave a review</td>
+      <td>refund, but was seemingly hopeful I wouldn't leave a review.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>12</td>
+      <td>11</td>
+      <td>bug</td>
+      <td>confirmed the property is bed bug free. The property is regularly inspected and treated</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>12</td>
+      <td>19</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>12</td>
+      <td>27</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>13</td>
+      <td>21</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>14</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>14</td>
+      <td>25</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>15</td>
+      <td>10</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>15</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>15</td>
+      <td>29</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>16</td>
+      <td>10</td>
+      <td>party</td>
+      <td>enjoyed our stay with a party of 6.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>16</td>
+      <td>20</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>16</td>
+      <td>25</td>
+      <td>birthday</td>
+      <td>Patrick at any of his locations. This made my birthday weekend a blast. He's definitely a Super</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>16</td>
+      <td>29</td>
+      <td>birthday</td>
+      <td>Happy birthday, so happy you enjoyed the backyard. Can't wait to have you back</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>17</td>
+      <td>26</td>
+      <td>putt putt</td>
+      <td>So glad the kids enjoyed it, the putt putt is a plus!</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>19</td>
+      <td>9</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>19</td>
+      <td>29</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>19</td>
+      <td>30</td>
+      <td>group</td>
+      <td>A group of 9 girls stayed at this rental for a bachelorette trip and it was great! We loved the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>19</td>
+      <td>30</td>
+      <td>group of</td>
+      <td>A group of 9 girls stayed at this rental for a bachelorette trip and it was great! We loved the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+      <td>3</td>
+      <td>broken</td>
+      <td>The only negative was that the bed in the master bedroom was broken with the bottom of the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+      <td>4</td>
+      <td>floor</td>
+      <td>bed sagging towards the floor due to some planks being broken. The bed was still very</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+      <td>4</td>
+      <td>broken</td>
+      <td>bed sagging towards the floor due to some planks being broken. The bed was still very</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+      <td>25</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+      <td>26</td>
+      <td>bachelor</td>
+      <td>We stayed here for a joint bachelor/bachelorette trip and it was perfect! The location was</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+      <td>26</td>
+      <td>joint bachelor</td>
+      <td>We stayed here for a joint bachelor/bachelorette trip and it was perfect! The location was</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>21</td>
+      <td>22</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>21</td>
+      <td>31</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>22</td>
+      <td>7</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>23</td>
+      <td>3</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>23</td>
+      <td>18</td>
+      <td>bathroom fixtures</td>
+      <td>some of the bathroom fixtures, but all in all it was very clean, comfortable and a great place to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>24</td>
+      <td>9</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>24</td>
+      <td>28</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>25</td>
+      <td>8</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>25</td>
+      <td>9</td>
+      <td>group</td>
+      <td>Great place for a big group, easy to access downtown Savannah, and the games and activities</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>26</td>
+      <td>15</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>26</td>
+      <td>27</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>27</td>
+      <td>14</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>27</td>
+      <td>22</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>27</td>
+      <td>30</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>28</td>
+      <td>10</td>
+      <td>bathroom fixtures</td>
+      <td>Patrick was very friendly, responsive, and helpful but some bathroom fixtures badly needed</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>28</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>28</td>
+      <td>29</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>29</td>
+      <td>11</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>30</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>30</td>
+      <td>22</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>31</td>
+      <td>5</td>
+      <td>group</td>
+      <td>I would highly recommend this home especially If you have a large group this place sleeps up to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>31</td>
+      <td>5</td>
+      <td>large group</td>
+      <td>I would highly recommend this home especially If you have a large group this place sleeps up to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>31</td>
+      <td>5</td>
+      <td>sleeps up to</td>
+      <td>I would highly recommend this home especially If you have a large group this place sleeps up to</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>31</td>
+      <td>10</td>
+      <td>group</td>
+      <td>So happy to comfortably host your large group. It's hard to find that in savannah in a good</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>31</td>
+      <td>10</td>
+      <td>large group</td>
+      <td>So happy to comfortably host your large group. It's hard to find that in savannah in a good</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>31</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>33</td>
+      <td>9</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>34</td>
+      <td>11</td>
+      <td>tournament</td>
+      <td>boys for a soccer tournament. The house had enough space for everyone, and the boys loved</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>34</td>
+      <td>12</td>
+      <td>putt putt</td>
+      <td>the putt putt green out back! The adults really enjoyed the fully stocked coffee bar and the fire</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>35</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>35</td>
+      <td>15</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>35</td>
+      <td>31</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>37</td>
+      <td>15</td>
+      <td>sticky</td>
+      <td>Place was noticeably dirty when entering. Entrance hadn’t been vacuumed, sticky stuff on the</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>37</td>
+      <td>16</td>
+      <td>floor</td>
+      <td>floor. The couch was ripped, there was wall damage - felt like a party house unsuitable for family</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>37</td>
+      <td>16</td>
+      <td>party</td>
+      <td>floor. The couch was ripped, there was wall damage - felt like a party house unsuitable for family</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>37</td>
+      <td>16</td>
+      <td>party house</td>
+      <td>floor. The couch was ripped, there was wall damage - felt like a party house unsuitable for family</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>37</td>
+      <td>16</td>
+      <td>ripped</td>
+      <td>floor. The couch was ripped, there was wall damage - felt like a party house unsuitable for family</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>37</td>
+      <td>16</td>
+      <td>wall damage</td>
+      <td>floor. The couch was ripped, there was wall damage - felt like a party house unsuitable for family</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>38</td>
+      <td>6</td>
+      <td>fire pit</td>
+      <td>So glad you enjoyed the putting green and fire pit. Need to get you back into town soon when</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>41</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>41</td>
+      <td>33</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>42</td>
+      <td>24</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>28</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>33</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>8</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>22</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>24</td>
+      <td>bachelor</td>
+      <td>great stay with our group of guys for a long weekend and bachelor party.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>24</td>
+      <td>group</td>
+      <td>great stay with our group of guys for a long weekend and bachelor party.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>24</td>
+      <td>party</td>
+      <td>great stay with our group of guys for a long weekend and bachelor party.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>24</td>
+      <td>group of</td>
+      <td>great stay with our group of guys for a long weekend and bachelor party.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>6</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>14</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>6</td>
+      <td>4</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>6</td>
+      <td>5</td>
+      <td>tournament</td>
+      <td>We loved this Airbnb! We stayed there for my bachelorette trip and had a pickleball tournament.</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>6</td>
+      <td>20</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>7</td>
+      <td>28</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>8</td>
+      <td>8</td>
+      <td>golf</td>
+      <td>there spent a day but had fun with my grandchildren playing pickle ball and mini golf enough</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>8</td>
+      <td>8</td>
+      <td>pickle ball</td>
+      <td>there spent a day but had fun with my grandchildren playing pickle ball and mini golf enough</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>8</td>
+      <td>24</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>9</td>
+      <td>27</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>11</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>12</td>
+      <td>20</td>
+      <td>group</td>
+      <td>Group trip</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>7</td>
+      <td>fire pit</td>
+      <td>Great house in a convenient location! Love the fire pit and putting green in the backyard.</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>11</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>14</td>
+      <td>entertainment home</td>
+      <td>to find. Great entertainment home.</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>18</td>
+      <td>group</td>
+      <td>Traveled with partner, traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>20</td>
+      <td>tlc</td>
+      <td>Needs TLC</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>21</td>
+      <td>putt putt</td>
+      <td>The beds were comfortable and we slept well. However it is advertised as Putt Putt and expresso and the pictures</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>22</td>
+      <td>putt putt</td>
+      <td>showed a stocked expresso bar. All of the flavor bottles were empty and the putt putt green was not usable. The</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>23</td>
+      <td>tlc</td>
+      <td>house was comfortable but needs some TLC.</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>28</td>
+      <td>putt putt</td>
+      <td>your concerns with the Coffee Bar and Putt Putt. Hope to have you back soon!</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>12</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>18</td>
+      <td>fire pit</td>
+      <td>bar was stocked well. Kids loved sitting around the fire pit and catching up. Location was convenient and</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>24</td>
+      <td>fire pit</td>
+      <td>Great place to enjoy the holidays. Awesome that you enjoyed the fire pit and liked the neighborhood</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>29</td>
+      <td>towel rack</td>
+      <td>you get 2 hours less than you would someone else. And the floors left our feet black and a lot of the towel racks were</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>34</td>
+      <td>group</td>
+      <td>Traveled with partner, traveled with group, traveled with family and young children</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>16</td>
+      <td>fire pit</td>
+      <td>We thoroughly enjoyed our stay. We were disappointed that the fire pit didn't work, we suspect that it was out of gas,</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>24</td>
+      <td>floor</td>
+      <td>at night with the lights above. My only issue was kitchen floor. Our shoes stuck to it because it was so dirty. Thats a</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\halcyon-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>1</td>
+      <td>spa</td>
+      <td>3/28/26, 8:24 PM Hot Tub + Nespresso Bar + Bathroom Spa - Halcyon Bluff | Vrbo</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\halcyon-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>11</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\halcyon-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>1</td>
+      <td>spa</td>
+      <td>3/28/26, 8:24 PM Hot Tub + Nespresso Bar + Bathroom Spa - Halcyon Bluff | Vrbo</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\halcyon-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>20</td>
+      <td>tournament</td>
+      <td>in town for a youth soccer tournament at the Jennifer Ross complex, this is absolutely the place to be. It's five</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>1</td>
+      <td>projector</td>
+      <td>3/28/26, 8:21 PM 100" Projector, Marsh Views, Full Coffee Bar, Pool/Ping Pong Game Room - Chatham County | Vrbo</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>19</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>1</td>
+      <td>projector</td>
+      <td>3/28/26, 8:21 PM 100" Projector, Marsh Views, Full Coffee Bar, Pool/Ping Pong Game Room - Chatham County | Vrbo</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>4</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>11</td>
+      <td>group</td>
+      <td>Traveled with partner, traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>28</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>1</td>
+      <td>projector</td>
+      <td>3/28/26, 8:21 PM 100" Projector, Marsh Views, Full Coffee Bar, Pool/Ping Pong Game Room - Chatham County | Vrbo</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>6</td>
+      <td>tournament</td>
+      <td>Terrific location for tournament at Jennifer Ross</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>7</td>
+      <td>tournament</td>
+      <td>Super convenient for what we were in town for! Soccer tournament at Jennifer Ross Complex. Easy access to</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>20</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>30</td>
+      <td>group</td>
+      <td>worked well for our group.</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>1</td>
+      <td>projector</td>
+      <td>3/28/26, 8:21 PM 100" Projector, Marsh Views, Full Coffee Bar, Pool/Ping Pong Game Room - Chatham County | Vrbo</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>6</td>
+      <td>projector</td>
+      <td>a movie on the outdoor projector. Kitchen was specious and equipped with the every day cooking necessities. Beds</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>21</td>
+      <td>group</td>
+      <td>Traveled with group</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>34</td>
+      <td>floor</td>
+      <td>Savannah State University. Nice open floor plan and hose is larger than it looks from the outside. Parking was great</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>1</td>
+      <td>projector</td>
+      <td>3/28/26, 8:21 PM 100" Projector, Marsh Views, Full Coffee Bar, Pool/Ping Pong Game Room - Chatham County | Vrbo</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>6</td>
+      <td>super bowl</td>
+      <td>Super Bowl in Savannah</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>7</td>
+      <td>super bowl</td>
+      <td>Enjoyed watching the Super Bowl and making pizzas in this lovely house. We used the large projector and main TV-</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>7</td>
+      <td>projector</td>
+      <td>Enjoyed watching the Super Bowl and making pizzas in this lovely house. We used the large projector and main TV-</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>7</td>
+      <td>tv</td>
+      <td>Enjoyed watching the Super Bowl and making pizzas in this lovely house. We used the large projector and main TV-</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>📍 Page Hotspots (Matches per Page)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>file</th>
+      <th>page</th>
+      <th>matches_on_page</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>6</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>7</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>8</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>9</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>11</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>12</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>13</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>14</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>15</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>16</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>17</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>19</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>20</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>21</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>22</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>23</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>24</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>25</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>26</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>27</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>28</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>29</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>30</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>31</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>33</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>34</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>35</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>37</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>38</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>41</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\backshell -airbnb-reviews-3-28-2026.pdf</td>
+      <td>42</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>6</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>7</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>8</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>9</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>11</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>AirBNB\march 28\halcyon-airbnb-reviews-3-28-2026.pdf</td>
+      <td>12</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>4</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>5</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>7</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>9</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>10</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>11</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>12</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>13</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>14</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>15</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>17</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>18</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>19</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>20</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>21</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>22</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>23</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>24</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>27</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>28</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>29</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>30</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>31</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>32</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>34</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>35</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>36</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>37</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>38</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>39</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>41</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>42</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>43</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>44</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>45</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>48</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>49</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>51</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>AirBNB</td>
+      <td>Whitefield-airbnb-reviews-2-26-26.pdf</td>
+      <td>52</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\backshell-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\halcyon-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\halcyon-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>2</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <td>VRBO</td>
+      <td>VRBO\march 28 2026\whitefield-VRBO-reviews-3-28-2026.pdf</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</body>
+</html>
