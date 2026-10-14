@@ -8,6 +8,9 @@ WorkingDirectory=/usr/local/lib/airbnb-portal
 StateDirectory=airbnb-portal
 StateDirectoryMode=0700
 DynamicUser=yes
+SupplementaryGroups=audio
+Environment=PORTAL_AUDIO_DEVICE=plughw:CARD=Headphones,DEV=0
+Environment=PORTAL_BELL_ENABLED=1
 Restart=on-failure
 NoNewPrivileges=yes
 ProtectSystem=strict

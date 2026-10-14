@@ -108,7 +108,7 @@ with client.open_sftp() as sftp:
     for name in ['portal.js', 'portal.css']:
         upload(folder / name, stage + '/site/' + name)
     for path in folder.iterdir():
-        if path.suffix in {'.conf', '.nft', '.service', '.sh', '.link'} or path.name in {'portal-server.py','portal-admin.html'}:
+        if path.suffix in {'.conf', '.nft', '.service', '.sh', '.link'} or path.name in {'portal-server.py','portal-admin.html','doorbell.wav'}:
             upload(path, stage + '/' + path.name)
     owner_hash = hashlib.sha256()
     for path in sorted((repo / 'owners').rglob('*')):

@@ -4,14 +4,40 @@ from contextlib import contextmanager
 from datetime import datetime, timezone
 import io
 import json
+import logging
 import os
 from pathlib import Path
 import sqlite3
+import queue
+import subprocess
+import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from uuid import UUID
 
 DATABASE = Path(os.environ.get('STATE_DIRECTORY', '/var/lib/airbnb-portal')) / 'portal.sqlite3'
 DATABASE.parent.mkdir(parents=True, exist_ok=True)
+bell_queue = queue.Queue(maxsize=20)
+
+def ring_worker():
+    while True:
+        bell_queue.get()
+        try:
+            device = os.environ.get('PORTAL_AUDIO_DEVICE', 'plughw:CARD=Headphones,DEV=0')
+            subprocess.run(['/usr/bin/aplay','-q','-D',device,str(Path(__file__).with_name('doorbell.wav'))], check=True, timeout=10)
+            logging.info('Visitor doorbell played through the headphone output')
+        except (OSError, subprocess.SubprocessError):
+            logging.exception('Could not play visitor doorbell')
+        finally:
+            bell_queue.task_done()
+
+threading.Thread(target=ring_worker, daemon=True).start()
+
+def ring():
+    if os.environ.get('PORTAL_BELL_ENABLED', '1') == '1':
+        try:
+            bell_queue.put_nowait(True)
+        except queue.Full:
+            logging.warning('Doorbell queue full; visit was still recorded')
 
 @contextmanager
 def connect():
@@ -114,9 +140,14 @@ class Handler(BaseHTTPRequestHandler):
                     if not page.startswith('/') or any(ord(c) < 32 for c in page):
                         raise ValueError('Invalid page')
                     # Management previews do not inflate the hotspot visitor count.
+                    inserted = False
+                    timestamp = now()
                     if hotspot != 'Management LAN':
-                        db.execute('INSERT OR IGNORE INTO visits VALUES (?,?,?,?,?)', (session, visitor, now(), page, hotspot))
+                        inserted = db.execute('INSERT OR IGNORE INTO visits VALUES (?,?,?,?,?)', (session, visitor, timestamp, page, hotspot)).rowcount > 0
                     db.commit()
+                    if inserted:
+                        logging.info('Visitor session recorded: %s at %s', hotspot, timestamp)
+                        ring()
                     self.reply(200, counts(db))
                 else:
                     submission = identifier(data['submission_id'])
@@ -136,4 +167,5 @@ class Handler(BaseHTTPRequestHandler):
             self.reply(503, {'error':'Could not save right now. Please try again.'})
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(message)s')
     ThreadingHTTPServer(('127.0.0.1', 8090), Handler).serve_forever()

@@ -19,7 +19,7 @@ ln -sfn /etc/nginx/sites-available/airbnb-wifi /etc/nginx/sites-enabled/airbnb-w
 install -m 644 airbnb-wifi.nft /etc/airbnb-wifi.nft
 install -m 644 airbnb-wifi-firewall.service /etc/systemd/system/airbnb-wifi-firewall.service
 install -d /usr/local/lib/airbnb-portal
-install -m 644 portal-server.py portal-admin.html /usr/local/lib/airbnb-portal/
+install -m 644 portal-server.py portal-admin.html doorbell.wav /usr/local/lib/airbnb-portal/
 install -m 644 airbnb-portal.service /etc/systemd/system/airbnb-portal.service
 printf 'net.ipv4.ip_forward=0\n' > /etc/sysctl.d/90-airbnb-wifi.conf
 sysctl -p /etc/sysctl.d/90-airbnb-wifi.conf
