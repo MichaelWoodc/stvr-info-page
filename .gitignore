@@ -11,3 +11,6 @@
 
 **/__pycache__/
 *.partial.mp4
+
+/raspberry-pi-hotspot/full-videos/
+/raspberry-pi-hotspot/verification/

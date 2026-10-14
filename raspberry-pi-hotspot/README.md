@@ -150,3 +150,7 @@ python raspberry-pi-hotspot/verify-local-site.py
 ```
 
 Setup uses the [NetworkManager settings reference](https://networkmanager.pages.freedesktop.org/NetworkManager/NetworkManager/nm-settings-nmcli.html).
+
+### Complete offline videos
+
+The public sites embed YouTube directly. The Pi uses full local MP4s and does not provide guest internet access. Run `prepare-full-videos.py` before deployment: it copies the seven original MP4s from Downloads unchanged and uses `dist/assets/whitefield/Airbnb Brawl/zoomed and subtitled.mp4` for the fight. That source remains unchanged. The fight is reencoded at its original resolution with H.264/AAC, filling the initial 0.2-second video gap with the first frame so both tracks start at zero. No content is trimmed. Prepared video files are ignored by Git; keep the originals locally.
