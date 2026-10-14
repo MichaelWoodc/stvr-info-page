@@ -1,0 +1,22 @@
+table inet airbnb_wifi {
+    chain intercept {
+        type nat hook prerouting priority dstnat; policy accept;
+        iifname "wlan0" tcp dport 80 counter redirect to :80
+    }
+    chain hotspot_input {
+        type filter hook input priority filter; policy accept;
+        iifname "wlan0" udp dport { 53, 67 } accept
+        iifname "wlan0" tcp dport { 53, 80 } accept
+        iifname "wlan0" ip protocol icmp accept
+        iifname "wlan0" counter reject
+    }
+    chain hotspot_forward {
+        type filter hook forward priority filter; policy accept;
+        # Keep hotspot visitors off the home LAN, including the router UI.
+        iifname "wlan0" ip daddr { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 } counter reject
+        # The hotspot is fully offline: no internet forwarding, including HTTPS.
+        iifname "wlan0" counter reject
+        oifname "wlan0" counter reject
+    }
+}
+

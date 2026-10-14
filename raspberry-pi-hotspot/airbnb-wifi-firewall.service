@@ -1,0 +1,16 @@
+[Unit]
+Description=Airbnb Wi-Fi captive portal routing and isolation
+After=NetworkManager.service
+Before=dnsmasq.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=-/usr/sbin/nft delete table inet airbnb_wifi
+ExecStartPre=-/usr/sbin/nft delete table ip airbnb_wifi_nat
+ExecStart=/usr/sbin/nft -f /etc/airbnb-wifi.nft
+ExecStop=-/usr/sbin/nft delete table inet airbnb_wifi
+ExecStop=-/usr/sbin/nft delete table ip airbnb_wifi_nat
+
+[Install]
+WantedBy=multi-user.target

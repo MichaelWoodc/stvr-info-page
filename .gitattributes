@@ -1,0 +1,5 @@
+raspberry-pi-hotspot/*.sh text eol=lf
+raspberry-pi-hotspot/*.conf text eol=lf
+raspberry-pi-hotspot/*.nft text eol=lf
+raspberry-pi-hotspot/*.service text eol=lf
+raspberry-pi-hotspot/*.py text eol=lf

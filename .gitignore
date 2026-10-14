@@ -1,0 +1,13 @@
+
+# Preserve downloaded originals locally; publish resized MP4s from videos/.
+/dist/assets/whitefield/8-5-26 grinder pump still overflowing/
+/dist/assets/whitefield/8611 Whitefield Ave Grinder Pump Failure - Guest Notices Toilet Paper/
+/dist/assets/whitefield/Airbnb Brawl/
+/dist/assets/whitefield/ancrest nvr with sewer overlay/
+/dist/assets/whitefield/Bullets hit nearby homes in short term vacation rental shooting/
+/dist/assets/whitefield/Chatham Co. Police investigating after nearly 40 shots fired from rental property/
+/dist/assets/whitefield/Grinder  Pump Overflowing/
+/dist/assets/whitefield/‘Inches Away’; Savannah neighbors react to bullets flying through windows in Airbnb shootout/
+
+**/__pycache__/
+*.partial.mp4
