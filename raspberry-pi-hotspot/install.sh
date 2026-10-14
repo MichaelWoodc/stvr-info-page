@@ -39,3 +39,6 @@ systemctl restart airbnb-wifi-firewall.service
 nmcli connection up Airbnb-wifi
 systemctl enable nginx dnsmasq
 systemctl restart nginx dnsmasq
+if nmcli -g WIFI-PROPERTIES.AP device show wlan1 2>/dev/null | grep -qx yes; then
+    sh install-usb-hotspot.sh
+fi

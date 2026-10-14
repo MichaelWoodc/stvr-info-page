@@ -20,7 +20,9 @@ with sync_playwright() as p:
     context.route('**/*', restrict)
     page = context.new_page()
     page.on('pageerror', lambda error: errors.append(str(error)))
-    page.goto('http://' + args.host + '/bed-bug-bordello.html#videos')
+    page.goto('http://' + args.host + '/')
+    assert urlparse(page.url).path == '/bed-bug-bordello.html'
+    assert page.locator('#reviews h2').inner_text() == 'What guests are saying.'
     page.wait_for_selector('video')
     assert page.locator('iframe').count() == 0
     assert page.locator('video').count() == 8

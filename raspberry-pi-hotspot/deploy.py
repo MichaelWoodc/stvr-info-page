@@ -104,7 +104,7 @@ with client.open_sftp() as sftp:
         out.write(app.encode('utf-8'))
     upload(repo / 'slideshow-timer.js', stage + '/site/slideshow-timer.js')
     for path in folder.iterdir():
-        if path.suffix in {'.conf', '.nft', '.service', '.sh'}:
+        if path.suffix in {'.conf', '.nft', '.service', '.sh', '.link'}:
             upload(path, stage + '/' + path.name)
     owner_hash = hashlib.sha256()
     for path in sorted((repo / 'owners').rglob('*')):
