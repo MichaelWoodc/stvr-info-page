@@ -54,7 +54,7 @@ with client.open_sftp() as sftp:
             # The published site lives in /dist/; the Pi serves it at /.
             text = path.read_text(encoding='utf-8').replace('../slideshow-timer.js', 'slideshow-timer.js')
             if '/site/owners/' not in target:
-                ids = {'BuSnI4De5Sk':'airbnb-brawl-zoomed.mp4?v=5fd21180dc3f','r2nPxOJlNd0':'bullets-hit-nearby-homes.mp4','LxeWDLwMIno':'police-investigation.mp4','E4NYwe-brgI':'neighbors-react.mp4','0qKOywS4RWo':'grinder-pump-overflow.mp4','USQtHn8AiHo':'grinder-pump-august-5.mp4','obECa0K9oss':'guest-notices-pump-failure.mp4','9YM11YvgE54':'nvr-sewer-overlay.mp4'}
+                ids = {'BuSnI4De5Sk':'airbnb-brawl-zoomed.mp4?v=91c7d057ceca','r2nPxOJlNd0':'bullets-hit-nearby-homes.mp4','LxeWDLwMIno':'police-investigation.mp4','E4NYwe-brgI':'neighbors-react.mp4','0qKOywS4RWo':'grinder-pump-overflow.mp4','USQtHn8AiHo':'grinder-pump-august-5.mp4','obECa0K9oss':'guest-notices-pump-failure.mp4','9YM11YvgE54':'nvr-sewer-overlay.mp4'}
                 text = re.sub(r'<iframe[^>]*src="https://www.youtube.com/embed/([^"]+)"[^>]*></iframe>', lambda m: '<video controls playsinline preload="metadata" src="assets/whitefield/videos/'+ids[m[1]]+'"></video>', text)
                 text = text.replace('</head>', '<script src="/portal.js" defer></script></head>')
             with sftp.file(target, 'w') as out:

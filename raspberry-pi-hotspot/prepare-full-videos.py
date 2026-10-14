@@ -30,10 +30,10 @@ for folder, slug, youtube_id in items:
     source_hash = hashlib.sha256(source.read_bytes()).hexdigest()
     target = output / (('airbnb-brawl-zoomed' if slug == 'airbnb-brawl' else slug)+'.mp4')
     stamp = output / (slug+'.json')
-    expected = {'source_sha256':source_hash,'settings':'zoomed-fight-zero-start-aac-v2' if slug == 'airbnb-brawl' else 'original-mp4-or-full-resolution-h264-crf18-no-trim-v1'}
+    expected = {'source_sha256':source_hash,'settings':'zoomed-fight-preserve-all-frames-aac-v3' if slug == 'airbnb-brawl' else 'original-mp4-or-full-resolution-h264-crf18-no-trim-v1'}
     if not target.exists() or not stamp.exists() or json.loads(stamp.read_text()) != expected:
         if slug == 'airbnb-brawl':
-            subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(source),'-map','0:v:0','-map','0:a:0?','-vf','fps=15:start_time=0','-c:v','libx264','-preset','fast','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-movflags','+faststart',str(target)],check=True)
+            subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(source),'-map','0:v:0','-map','0:a:0?','-vf','setpts=PTS-STARTPTS,tpad=start_mode=clone:start_duration=0.2','-fps_mode','passthrough','-c:v','libx264','-preset','fast','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-b:a','128k','-movflags','+faststart',str(target)],check=True)
         elif source.suffix.lower() == '.mp4':
             shutil.copy2(source, target)
             assert hashlib.sha256(target.read_bytes()).hexdigest() == source_hash
