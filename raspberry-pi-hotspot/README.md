@@ -11,6 +11,28 @@ same local site and block all internet access and access to each other.
 Both captive portals open **Bed Bug Bordello** directly by default. The site's
 collection and Garland pages remain accessible through its navigation.
 
+## Visitor counter, visit log, and guestbook
+
+Pi pages show a visitor counter and a **Sign the guestbook** form. Submissions
+are saved locally; they are not automatically published to other visitors.
+These features are only on the Pi, not the public GitHub Pages site.
+
+From the home LAN, review responses and visit timestamps at:
+
+**http://192.168.1.151:8081/**
+
+The management page includes CSV exports of both logs. Port 8081 is blocked
+on both hotspot interfaces. The backend listens on loopback port 8090 and stores
+SQLite data in `/var/lib/airbnb-portal/portal.sqlite3` (systemd's persistent private
+state directory). Website refreshes do not overwrite the database.
+
+A visitor is an anonymous browser identifier saved in local storage; a visit
+is a browser session. Reloading or switching pages within the same session
+does not inflate the visit count. Clearing browser storage or using a different
+portal address can count the same person again. Management-LAN previews do not
+increment the hotspot count. Logs record UTC timestamps, the initial page, and
+the hotspot name; the management screen displays Eastern time.
+
 The main parody site from this repository's `dist/` directory is served locally:
 
 - On the hotspot: `http://10.42.0.1/` or `http://airbnb.wifi/`.

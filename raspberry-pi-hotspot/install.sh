@@ -18,6 +18,9 @@ fi
 ln -sfn /etc/nginx/sites-available/airbnb-wifi /etc/nginx/sites-enabled/airbnb-wifi
 install -m 644 airbnb-wifi.nft /etc/airbnb-wifi.nft
 install -m 644 airbnb-wifi-firewall.service /etc/systemd/system/airbnb-wifi-firewall.service
+install -d /usr/local/lib/airbnb-portal
+install -m 644 portal-server.py portal-admin.html /usr/local/lib/airbnb-portal/
+install -m 644 airbnb-portal.service /etc/systemd/system/airbnb-portal.service
 printf 'net.ipv4.ip_forward=0\n' > /etc/sysctl.d/90-airbnb-wifi.conf
 sysctl -p /etc/sysctl.d/90-airbnb-wifi.conf
 nginx -t
@@ -32,6 +35,8 @@ nmcli connection modify Airbnb-wifi \
     ipv4.method manual ipv4.addresses 10.42.0.1/24 ipv4.never-default yes \
     ipv6.method disabled connection.autoconnect yes connection.autoconnect-priority 999
 systemctl daemon-reload
+systemctl enable airbnb-portal.service
+systemctl restart airbnb-portal.service
 systemctl disable --now airbnb-youtube.service 2>/dev/null || true
 rm -f /etc/systemd/system/airbnb-youtube.service /usr/local/lib/airbnb-wifi/youtube-gateway.py
 systemctl enable airbnb-wifi-firewall.service

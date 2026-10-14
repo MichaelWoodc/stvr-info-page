@@ -1,0 +1,19 @@
+[Unit]
+Description=Local captive portal visitor counter and guestbook
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/lib/airbnb-portal/portal-server.py
+WorkingDirectory=/usr/local/lib/airbnb-portal
+StateDirectory=airbnb-portal
+StateDirectoryMode=0700
+DynamicUser=yes
+Restart=on-failure
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+RestrictAddressFamilies=AF_INET AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

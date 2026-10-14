@@ -53,6 +53,8 @@ with client.open_sftp() as sftp:
         if site_html:
             # The published site lives in /dist/; the Pi serves it at /.
             text = path.read_text(encoding='utf-8').replace('../slideshow-timer.js', 'slideshow-timer.js')
+            if '/site/owners/' not in target:
+                text = text.replace('</head>', '<script src="/portal.js" defer></script></head>')
             with sftp.file(target, 'w') as out:
                 out.write(text.encode('utf-8'))
         else:
@@ -103,8 +105,10 @@ with client.open_sftp() as sftp:
     with sftp.file(stage + '/site/app.js', 'w') as out:
         out.write(app.encode('utf-8'))
     upload(repo / 'slideshow-timer.js', stage + '/site/slideshow-timer.js')
+    for name in ['portal.js', 'portal.css']:
+        upload(folder / name, stage + '/site/' + name)
     for path in folder.iterdir():
-        if path.suffix in {'.conf', '.nft', '.service', '.sh', '.link'}:
+        if path.suffix in {'.conf', '.nft', '.service', '.sh', '.link'} or path.name in {'portal-server.py','portal-admin.html'}:
             upload(path, stage + '/' + path.name)
     owner_hash = hashlib.sha256()
     for path in sorted((repo / 'owners').rglob('*')):
