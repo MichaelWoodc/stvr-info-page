@@ -83,5 +83,12 @@ function prevSlide() {
 }
 </script>
 
+<script src="../../slideshow-timer.js"></script>
+<script>
+const slideshowTimer = createSlideshowTimer(document.querySelector('.slideshow'), () => nextSlide());
+document.querySelector('.slideshow').addEventListener('click', event => {
+  if (event.target.closest('button')) slideshowTimer.reset();
+});
+</script>
 </body>
 </html>
