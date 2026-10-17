@@ -1,0 +1,351 @@
+{
+  "url": "https://pub.sagis.org/arcgis/rest/services/OpenData/Parcels/MapServer/18/query",
+  "params": {
+    "f": "json",
+    "where": "UPPER(NAME) LIKE '%FORELLI%'",
+    "outFields": "*",
+    "returnGeometry": "false"
+  },
+  "response": {
+    "displayFieldName": "NAME",
+    "fieldAliases": {
+      "OBJECTID": "OBJECTID",
+      "PIN": "PIN",
+      "NAME": "Owner's Name",
+      "ADDRESS_1": "Owner's Address 1",
+      "ADDRESS_2": "Owner's Address 2",
+      "ADDRESS_3": "Owner's Address 3",
+      "CITY": "City",
+      "STATE": "State",
+      "ZIP_CODE": "Zip Code",
+      "PROP_ADDRESS": "Property Address",
+      "STREET_LIGHTING": "Street Lighting",
+      "MUN_CODE": "Municipal Code",
+      "NEIGHBORHOOD_CODE": "Neighborhood Code",
+      "LAND_UNITS": "Land Units",
+      "LAND_FRONTAGE": "Land Frontage",
+      "LAND_DEPTH": "Land Depth",
+      "LAND_TYPE": "Land Type",
+      "REAL_ESTATE_VALUE": "Real Estate Value",
+      "LAND_VALUE": "Land Value",
+      "BUILDING_VALUE": "Building Value",
+      "PROP_CLASS_CODES": "Property Class",
+      "LAND_USE_CODE": "Land Use Code",
+      "SALE_PRICE": "Sale Price",
+      "SALE_YY": "Sale Year",
+      "SALE_MM": "Sale Month",
+      "SALE_DD": "Sale Day",
+      "TRANSIT_CODE": "Transit Code",
+      "APC_CODE": "APC Code",
+      "COMM_CAT": "Commercial Category",
+      "AGENT": "Agent",
+      "TOTAL_ASSESSMENT": "Total Assessment",
+      "LEGAL_1": "Legal Description 1",
+      "LEGAL_2": "Legal Description 2",
+      "ZONING": "Zoning Code",
+      "SALE_OR_BOOK": "Sale or Book",
+      "SALE_OR_PAGE": "Sale or Page",
+      "BASE_YR_VALUE": "Base Year Value",
+      "BASE_YR_VAL_CPI": "Base Year Value w/ CPI",
+      "CAMA_LAND_VALUE": "CAMA Land Value",
+      "CAMA_MISC_VALUE": "CAMA Misc Value",
+      "CAMA_BLDG_VALUE": "CAMA Building Value",
+      "CAMA_TOTAL_VALUE": "CAMA Total Value",
+      "CHTXFER_FILLER": "CHTXFER Filler",
+      "ADTAB_TAD": "Tax Allocation District",
+      "ADTAB_TAD_BYV": "TAD Base Year Value",
+      "ADTAB_EZONE": "Enterprise Zone",
+      "GDATA_EZ": "GData EZ",
+      "TCR_DATE": "TCR Date",
+      "SHAPE.STArea()": "SHAPE.STArea()",
+      "SHAPE.STLength()": "SHAPE.STLength()"
+    },
+    "fields": [
+      {
+        "name": "OBJECTID",
+        "type": "esriFieldTypeOID",
+        "alias": "OBJECTID"
+      },
+      {
+        "name": "PIN",
+        "type": "esriFieldTypeString",
+        "alias": "PIN",
+        "length": 15
+      },
+      {
+        "name": "NAME",
+        "type": "esriFieldTypeString",
+        "alias": "Owner's Name",
+        "length": 45
+      },
+      {
+        "name": "ADDRESS_1",
+        "type": "esriFieldTypeString",
+        "alias": "Owner's Address 1",
+        "length": 45
+      },
+      {
+        "name": "ADDRESS_2",
+        "type": "esriFieldTypeString",
+        "alias": "Owner's Address 2",
+        "length": 45
+      },
+      {
+        "name": "ADDRESS_3",
+        "type": "esriFieldTypeString",
+        "alias": "Owner's Address 3",
+        "length": 45
+      },
+      {
+        "name": "CITY",
+        "type": "esriFieldTypeString",
+        "alias": "City",
+        "length": 20
+      },
+      {
+        "name": "STATE",
+        "type": "esriFieldTypeString",
+        "alias": "State",
+        "length": 2
+      },
+      {
+        "name": "ZIP_CODE",
+        "type": "esriFieldTypeString",
+        "alias": "Zip Code",
+        "length": 12
+      },
+      {
+        "name": "PROP_ADDRESS",
+        "type": "esriFieldTypeString",
+        "alias": "Property Address",
+        "length": 34
+      },
+      {
+        "name": "STREET_LIGHTING",
+        "type": "esriFieldTypeString",
+        "alias": "Street Lighting",
+        "length": 2
+      },
+      {
+        "name": "MUN_CODE",
+        "type": "esriFieldTypeString",
+        "alias": "Municipal Code",
+        "length": 1
+      },
+      {
+        "name": "NEIGHBORHOOD_CODE",
+        "type": "esriFieldTypeString",
+        "alias": "Neighborhood Code",
+        "length": 8
+      },
+      {
+        "name": "LAND_UNITS",
+        "type": "esriFieldTypeDouble",
+        "alias": "Land Units"
+      },
+      {
+        "name": "LAND_FRONTAGE",
+        "type": "esriFieldTypeString",
+        "alias": "Land Frontage",
+        "length": 11
+      },
+      {
+        "name": "LAND_DEPTH",
+        "type": "esriFieldTypeString",
+        "alias": "Land Depth",
+        "length": 11
+      },
+      {
+        "name": "LAND_TYPE",
+        "type": "esriFieldTypeString",
+        "alias": "Land Type",
+        "length": 2
+      },
+      {
+        "name": "REAL_ESTATE_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "Real Estate Value"
+      },
+      {
+        "name": "LAND_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "Land Value"
+      },
+      {
+        "name": "BUILDING_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "Building Value"
+      },
+      {
+        "name": "PROP_CLASS_CODES",
+        "type": "esriFieldTypeString",
+        "alias": "Property Class",
+        "length": 1
+      },
+      {
+        "name": "LAND_USE_CODE",
+        "type": "esriFieldTypeString",
+        "alias": "Land Use Code",
+        "length": 2
+      },
+      {
+        "name": "SALE_PRICE",
+        "type": "esriFieldTypeDouble",
+        "alias": "Sale Price"
+      },
+      {
+        "name": "SALE_YY",
+        "type": "esriFieldTypeString",
+        "alias": "Sale Year",
+        "length": 4
+      },
+      {
+        "name": "SALE_MM",
+        "type": "esriFieldTypeString",
+        "alias": "Sale Month",
+        "length": 2
+      },
+      {
+        "name": "SALE_DD",
+        "type": "esriFieldTypeString",
+        "alias": "Sale Day",
+        "length": 2
+      },
+      {
+        "name": "TRANSIT_CODE",
+        "type": "esriFieldTypeString",
+        "alias": "Transit Code",
+        "length": 8
+      },
+      {
+        "name": "APC_CODE",
+        "type": "esriFieldTypeString",
+        "alias": "APC Code",
+        "length": 1
+      },
+      {
+        "name": "COMM_CAT",
+        "type": "esriFieldTypeString",
+        "alias": "Commercial Category",
+        "length": 4
+      },
+      {
+        "name": "AGENT",
+        "type": "esriFieldTypeString",
+        "alias": "Agent",
+        "length": 3
+      },
+      {
+        "name": "TOTAL_ASSESSMENT",
+        "type": "esriFieldTypeDouble",
+        "alias": "Total Assessment"
+      },
+      {
+        "name": "LEGAL_1",
+        "type": "esriFieldTypeString",
+        "alias": "Legal Description 1",
+        "length": 32
+      },
+      {
+        "name": "LEGAL_2",
+        "type": "esriFieldTypeString",
+        "alias": "Legal Description 2",
+        "length": 32
+      },
+      {
+        "name": "ZONING",
+        "type": "esriFieldTypeString",
+        "alias": "Zoning Code",
+        "length": 6
+      },
+      {
+        "name": "SALE_OR_BOOK",
+        "type": "esriFieldTypeString",
+        "alias": "Sale or Book",
+        "length": 5
+      },
+      {
+        "name": "SALE_OR_PAGE",
+        "type": "esriFieldTypeString",
+        "alias": "Sale or Page",
+        "length": 5
+      },
+      {
+        "name": "BASE_YR_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "Base Year Value"
+      },
+      {
+        "name": "BASE_YR_VAL_CPI",
+        "type": "esriFieldTypeDouble",
+        "alias": "Base Year Value w/ CPI"
+      },
+      {
+        "name": "CAMA_LAND_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "CAMA Land Value"
+      },
+      {
+        "name": "CAMA_MISC_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "CAMA Misc Value"
+      },
+      {
+        "name": "CAMA_BLDG_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "CAMA Building Value"
+      },
+      {
+        "name": "CAMA_TOTAL_VALUE",
+        "type": "esriFieldTypeDouble",
+        "alias": "CAMA Total Value"
+      },
+      {
+        "name": "CHTXFER_FILLER",
+        "type": "esriFieldTypeString",
+        "alias": "CHTXFER Filler",
+        "length": 14
+      },
+      {
+        "name": "ADTAB_TAD",
+        "type": "esriFieldTypeString",
+        "alias": "Tax Allocation District",
+        "length": 3
+      },
+      {
+        "name": "ADTAB_TAD_BYV",
+        "type": "esriFieldTypeDouble",
+        "alias": "TAD Base Year Value"
+      },
+      {
+        "name": "ADTAB_EZONE",
+        "type": "esriFieldTypeString",
+        "alias": "Enterprise Zone",
+        "length": 3
+      },
+      {
+        "name": "GDATA_EZ",
+        "type": "esriFieldTypeString",
+        "alias": "GData EZ",
+        "length": 3
+      },
+      {
+        "name": "TCR_DATE",
+        "type": "esriFieldTypeDate",
+        "alias": "TCR Date",
+        "length": 8
+      },
+      {
+        "name": "SHAPE.STArea()",
+        "type": "esriFieldTypeDouble",
+        "alias": "SHAPE.STArea()"
+      },
+      {
+        "name": "SHAPE.STLength()",
+        "type": "esriFieldTypeDouble",
+        "alias": "SHAPE.STLength()"
+      }
+    ],
+    "features": []
+  }
+}

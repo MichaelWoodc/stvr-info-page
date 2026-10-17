@@ -1,0 +1,441 @@
+{
+  "url": "https://pub.sagis.org/arcgis/rest/services/OpenData/Parcels/MapServer/24/query",
+  "params": {
+    "f": "json",
+    "where": "UPPER(Owner) LIKE '%FORELLI%' OR UPPER(Owner2) LIKE '%FORELLI%' OR UPPER(PropAddress_StreetName) LIKE '%FORELLI%'",
+    "outFields": "*",
+    "returnGeometry": "false"
+  },
+  "response": {
+    "displayFieldName": "PropAddress_StreetName",
+    "fieldAliases": {
+      "OBJECTID": "OBJECTID",
+      "PIN": "PIN",
+      "Owner": "Owner",
+      "Owner2": "Owner2",
+      "Mailing_Address": "Mailing_Address",
+      "Mailing_City": "Mailing_City",
+      "Mailing_State": "Mailing_State",
+      "Mailing_Zip": "Mailing_Zip",
+      "PropAddress_Num": "PropAddress_Num",
+      "PropAddress_PreDir": "PropAddress_PreDir",
+      "PropAddress_StreetName": "PropAddress_StreetName",
+      "PropAddress_StreetType": "PropAddress_StreetType",
+      "PropAddress_PostDir": "PropAddress_PostDir",
+      "PropAddress_UnitType": "PropAddress_UnitType",
+      "PropAddress_UnitNum": "PropAddress_UnitNum",
+      "PropAddress_City": "PropAddress_City",
+      "PropAddress_State": "PropAddress_State",
+      "PropAddress_Zip": "PropAddress_Zip",
+      "PropAddress_Full": "PropAddress_Full",
+      "Municipality": "Municipality",
+      "Nbhd_Code_BOA": "Nbhd_Code_BOA",
+      "FairMarketValue": "FairMarketValue",
+      "FMV_Land": "FMV_Land",
+      "FMV_Building": "FMV_Building",
+      "Property_Use": "Property_Use",
+      "Acres": "Acres",
+      "YearBuilt": "YearBuilt",
+      "Effective_YB": "Effective_YB",
+      "Sale_Price": "Sale_Price",
+      "Sale_YY": "Sale_YY",
+      "Sale_MM": "Sale_MM",
+      "Sale_DD": "Sale_DD",
+      "Sale_Quality": "Sale_Quality",
+      "Commercial_Cat": "Commercial_Cat",
+      "Total_Assessment": "Total_Assessment",
+      "Legal_Description": "Legal_Description",
+      "Sale_Book": "Sale_Book",
+      "Sale_Page": "Sale_Page",
+      "StephensDay_BYV": "StephensDay_BYV",
+      "StephensDay_BYV_CPI": "StephensDay_BYV_CPI",
+      "District_Lighting": "District_Lighting",
+      "District_Transit": "District_Transit",
+      "District_DryTrash": "District_DryTrash",
+      "District_EnterpriseZone": "District_EnterpriseZone",
+      "District_TAD": "District_TAD",
+      "Land_Use_1": "Land_Use_1",
+      "Land_Use_2": "Land_Use_2",
+      "Land_Use_3": "Land_Use_3",
+      "Land_Use_4": "Land_Use_4",
+      "Land_Frontage_1": "Land_Frontage_1",
+      "Land_Frontage_2": "Land_Frontage_2",
+      "Land_Frontage_3": "Land_Frontage_3",
+      "Land_Frontage_4": "Land_Frontage_4",
+      "Land_Units_1": "Land_Units_1",
+      "Land_Units_2": "Land_Units_2",
+      "Land_Units_3": "Land_Units_3",
+      "Land_Units_4": "Land_Units_4",
+      "Land_Type_1": "Land_Type_1",
+      "Land_Type_2": "Land_Type_2",
+      "Land_Type_3": "Land_Type_3",
+      "Land_Type_4": "Land_Type_4",
+      "Date_Updated": "Date_Updated",
+      "Shape.STArea()": "Shape.STArea()",
+      "Shape.STLength()": "Shape.STLength()"
+    },
+    "fields": [
+      {
+        "name": "OBJECTID",
+        "type": "esriFieldTypeOID",
+        "alias": "OBJECTID"
+      },
+      {
+        "name": "PIN",
+        "type": "esriFieldTypeString",
+        "alias": "PIN",
+        "length": 15
+      },
+      {
+        "name": "Owner",
+        "type": "esriFieldTypeString",
+        "alias": "Owner",
+        "length": 50
+      },
+      {
+        "name": "Owner2",
+        "type": "esriFieldTypeString",
+        "alias": "Owner2",
+        "length": 50
+      },
+      {
+        "name": "Mailing_Address",
+        "type": "esriFieldTypeString",
+        "alias": "Mailing_Address",
+        "length": 50
+      },
+      {
+        "name": "Mailing_City",
+        "type": "esriFieldTypeString",
+        "alias": "Mailing_City",
+        "length": 50
+      },
+      {
+        "name": "Mailing_State",
+        "type": "esriFieldTypeString",
+        "alias": "Mailing_State",
+        "length": 20
+      },
+      {
+        "name": "Mailing_Zip",
+        "type": "esriFieldTypeString",
+        "alias": "Mailing_Zip",
+        "length": 12
+      },
+      {
+        "name": "PropAddress_Num",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_Num",
+        "length": 20
+      },
+      {
+        "name": "PropAddress_PreDir",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_PreDir",
+        "length": 6
+      },
+      {
+        "name": "PropAddress_StreetName",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_StreetName",
+        "length": 100
+      },
+      {
+        "name": "PropAddress_StreetType",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_StreetType",
+        "length": 12
+      },
+      {
+        "name": "PropAddress_PostDir",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_PostDir",
+        "length": 6
+      },
+      {
+        "name": "PropAddress_UnitType",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_UnitType",
+        "length": 10
+      },
+      {
+        "name": "PropAddress_UnitNum",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_UnitNum",
+        "length": 20
+      },
+      {
+        "name": "PropAddress_City",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_City",
+        "length": 50
+      },
+      {
+        "name": "PropAddress_State",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_State",
+        "length": 50
+      },
+      {
+        "name": "PropAddress_Zip",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_Zip",
+        "length": 12
+      },
+      {
+        "name": "PropAddress_Full",
+        "type": "esriFieldTypeString",
+        "alias": "PropAddress_Full",
+        "length": 150
+      },
+      {
+        "name": "Municipality",
+        "type": "esriFieldTypeString",
+        "alias": "Municipality",
+        "length": 10
+      },
+      {
+        "name": "Nbhd_Code_BOA",
+        "type": "esriFieldTypeString",
+        "alias": "Nbhd_Code_BOA",
+        "length": 20
+      },
+      {
+        "name": "FairMarketValue",
+        "type": "esriFieldTypeInteger",
+        "alias": "FairMarketValue"
+      },
+      {
+        "name": "FMV_Land",
+        "type": "esriFieldTypeInteger",
+        "alias": "FMV_Land"
+      },
+      {
+        "name": "FMV_Building",
+        "type": "esriFieldTypeInteger",
+        "alias": "FMV_Building"
+      },
+      {
+        "name": "Property_Use",
+        "type": "esriFieldTypeString",
+        "alias": "Property_Use",
+        "length": 6
+      },
+      {
+        "name": "Acres",
+        "type": "esriFieldTypeDouble",
+        "alias": "Acres"
+      },
+      {
+        "name": "YearBuilt",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "YearBuilt"
+      },
+      {
+        "name": "Effective_YB",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Effective_YB"
+      },
+      {
+        "name": "Sale_Price",
+        "type": "esriFieldTypeInteger",
+        "alias": "Sale_Price"
+      },
+      {
+        "name": "Sale_YY",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Sale_YY"
+      },
+      {
+        "name": "Sale_MM",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Sale_MM"
+      },
+      {
+        "name": "Sale_DD",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Sale_DD"
+      },
+      {
+        "name": "Sale_Quality",
+        "type": "esriFieldTypeString",
+        "alias": "Sale_Quality",
+        "length": 10
+      },
+      {
+        "name": "Commercial_Cat",
+        "type": "esriFieldTypeString",
+        "alias": "Commercial_Cat",
+        "length": 50
+      },
+      {
+        "name": "Total_Assessment",
+        "type": "esriFieldTypeInteger",
+        "alias": "Total_Assessment"
+      },
+      {
+        "name": "Legal_Description",
+        "type": "esriFieldTypeString",
+        "alias": "Legal_Description",
+        "length": 150
+      },
+      {
+        "name": "Sale_Book",
+        "type": "esriFieldTypeString",
+        "alias": "Sale_Book",
+        "length": 20
+      },
+      {
+        "name": "Sale_Page",
+        "type": "esriFieldTypeString",
+        "alias": "Sale_Page",
+        "length": 20
+      },
+      {
+        "name": "StephensDay_BYV",
+        "type": "esriFieldTypeInteger",
+        "alias": "StephensDay_BYV"
+      },
+      {
+        "name": "StephensDay_BYV_CPI",
+        "type": "esriFieldTypeInteger",
+        "alias": "StephensDay_BYV_CPI"
+      },
+      {
+        "name": "District_Lighting",
+        "type": "esriFieldTypeString",
+        "alias": "District_Lighting",
+        "length": 10
+      },
+      {
+        "name": "District_Transit",
+        "type": "esriFieldTypeString",
+        "alias": "District_Transit",
+        "length": 10
+      },
+      {
+        "name": "District_DryTrash",
+        "type": "esriFieldTypeString",
+        "alias": "District_DryTrash",
+        "length": 10
+      },
+      {
+        "name": "District_EnterpriseZone",
+        "type": "esriFieldTypeString",
+        "alias": "District_EnterpriseZone",
+        "length": 10
+      },
+      {
+        "name": "District_TAD",
+        "type": "esriFieldTypeString",
+        "alias": "District_TAD",
+        "length": 10
+      },
+      {
+        "name": "Land_Use_1",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Use_1",
+        "length": 10
+      },
+      {
+        "name": "Land_Use_2",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Use_2",
+        "length": 10
+      },
+      {
+        "name": "Land_Use_3",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Use_3",
+        "length": 10
+      },
+      {
+        "name": "Land_Use_4",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Use_4",
+        "length": 10
+      },
+      {
+        "name": "Land_Frontage_1",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Land_Frontage_1"
+      },
+      {
+        "name": "Land_Frontage_2",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Land_Frontage_2"
+      },
+      {
+        "name": "Land_Frontage_3",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Land_Frontage_3"
+      },
+      {
+        "name": "Land_Frontage_4",
+        "type": "esriFieldTypeSmallInteger",
+        "alias": "Land_Frontage_4"
+      },
+      {
+        "name": "Land_Units_1",
+        "type": "esriFieldTypeDouble",
+        "alias": "Land_Units_1"
+      },
+      {
+        "name": "Land_Units_2",
+        "type": "esriFieldTypeDouble",
+        "alias": "Land_Units_2"
+      },
+      {
+        "name": "Land_Units_3",
+        "type": "esriFieldTypeDouble",
+        "alias": "Land_Units_3"
+      },
+      {
+        "name": "Land_Units_4",
+        "type": "esriFieldTypeDouble",
+        "alias": "Land_Units_4"
+      },
+      {
+        "name": "Land_Type_1",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Type_1",
+        "length": 10
+      },
+      {
+        "name": "Land_Type_2",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Type_2",
+        "length": 10
+      },
+      {
+        "name": "Land_Type_3",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Type_3",
+        "length": 10
+      },
+      {
+        "name": "Land_Type_4",
+        "type": "esriFieldTypeString",
+        "alias": "Land_Type_4",
+        "length": 10
+      },
+      {
+        "name": "Date_Updated",
+        "type": "esriFieldTypeDate",
+        "alias": "Date_Updated",
+        "length": 8
+      },
+      {
+        "name": "Shape.STArea()",
+        "type": "esriFieldTypeDouble",
+        "alias": "Shape.STArea()"
+      },
+      {
+        "name": "Shape.STLength()",
+        "type": "esriFieldTypeDouble",
+        "alias": "Shape.STLength()"
+      }
+    ],
+    "features": []
+  }
+}
