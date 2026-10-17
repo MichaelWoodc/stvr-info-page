@@ -1,5 +1,13 @@
 # Search metadata and static page generation
 
+The separate `dist/about-owner.html` page combines sourced BiggerPockets excerpts
+with the Humans of Patrick album. Run `python site-tools/build_owner.py` to
+rebuild it from the saved pages in `dist/patricia` and `dist/assets/owner/photos`.
+It checks every forum excerpt against a post attributed to Patrick Forelli,
+retains source links and post dates, and keeps editorial satire separate from
+quotes. Run it after `build_seo.py` when rebuilding both. Original captures stay
+unchanged; the owner page includes complete static content for readers without JS.
+
 Run `python site-tools/build_seo.py` after editing either site's app.js. Requires
 Python Playwright and installed Edge. The script opens visible Edge, writes
 page-specific titles/descriptions, canonical and social-sharing tags, WebPage

@@ -37,6 +37,7 @@ for folder in ['dist', 'parody-site-alternative/dist']:
     app = ROOT / folder / 'app.js'
     text = app.read_text(encoding='utf-8')
     titles = {'home':PAGES['index.html'][0], 'whitefield':PAGES['bed-bug-bordello.html'][0], 'garland':PAGES['garland-gta.html'][0]}
+    titles['owner'] = 'About the owner | Patrick Forelli · The Neighbor’s Travel Guide'
     text = re.sub(r'^document\.title=.*$', 'document.title='+json.dumps(titles)+'[page];', text, count=1, flags=re.M)
     text = text.replace('<p class="intro">${description}</p>', '<p class="intro">${description}</p><p class="site-context">'+CONTEXT+'</p>') if 'class="site-context"' not in text else text
     write_utf8(app, text)
@@ -126,7 +127,7 @@ if 'rel="canonical"' not in text:
     text = text.replace('</head>', '<link rel="canonical" href="'+PUBLIC+'owners/cozy_corner_rentals/cozy_corner_rentals.html"><meta name="description" content="Neighbor-created reports and guest-review material concerning Patrick Forelli, Cozy Corner Rentals, and vacation rentals in Savannah, GA on Airbnb and Vrbo."></head>')
 write_utf8(owner, text)
 
-urls = [canonical(name) for name in PAGES] + [PUBLIC+'owners/cozy_corner_rentals/cozy_corner_rentals.html']
+urls = [canonical(name) for name in PAGES] + [canonical('about-owner.html'), PUBLIC+'owners/cozy_corner_rentals/cozy_corner_rentals.html']
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join('  <url><loc>'+html.escape(url)+'</loc></url>' for url in urls)+'\n</urlset>\n'
 write_utf8(ROOT / 'sitemap.xml', sitemap)
 print('Canonical sitemap generated.', flush=True)

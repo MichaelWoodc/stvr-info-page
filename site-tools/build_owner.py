@@ -59,25 +59,32 @@ section = '''<section id="about-owner" aria-labelledby="owner-heading">
 <p class="note">Photos and quoted captions below come from the supplied offline copies of the Humans of Patrick Facebook page, saved October 17, 2026. They are presented as the page’s humorous posts, not verified biographical statements or independently authenticated quotations by Patrick Forelli. No affiliation or endorsement is implied.</p>
 <div class="owner-gallery">''' + '\n'.join(cards) + '</div></section>'
 
+from owner_editorial import biggerpockets_section
+editorial = biggerpockets_section(ROOT)
+section = section.replace('id="about-owner"', 'id="facebook-album"').replace('About the owner</h2>', 'The Facebook photo album</h2>')
+content = '<section class="owner-intro" id="about-owner"><div class="eyebrow">The Neighbor’s Travel Guide / Move fast. Break the peace.</div><h1>The tech-bro / frat-bro guide<br>to investing Mom &amp; Dad’s money.</h1><p class="intro">Disrupt the neighborhood. Scale the portfolio. Send Mom &amp; Dad the pitch deck. An unauthorized, satirical owner’s manual inspired by Patrick Forelli’s own forum posts.</p><a class="button" href="#forum-files">Read the forum files ↓</a><a class="button secondary" href="#facebook-album">Visit the photo album ↓</a><p class="source">About the owner · An independent parody. The tech-bro / frat-bro persona is our caricature; quotes are sourced and punchlines are ours.</p></section>' + editorial + section
 app_path = DIST / 'app.js'
 app = app_path.read_text(encoding='utf-8')
 app = re.sub(r'^const ownerSection=.*;\n', '', app, flags=re.M)
-app = 'const ownerSection=()=>'+json.dumps(section, ensure_ascii=False)+';\n'+app
-app = app.replace("${page==='home'?home():", "${page==='home'?home()+ownerSection():")
-nav_link = '<a href="index.html#about-owner">About the owner</a>'
-app = app.replace('<a href="garland-gta.html">Garland</a></nav>', '<a href="garland-gta.html">Garland</a>'+nav_link+'</nav>')
-app = app.replace('<a href="index.html">Back to the collection ↑</a>', nav_link+'<a href="index.html">Back to the collection ↑</a>') if nav_link+'<a href="index.html">Back' not in app else app
+app = 'const ownerSection=()=>'+json.dumps(content, ensure_ascii=False)+';\n'+app
+app = app.replace("const page=path.includes('bed-bug-bordello')", "const page=path.includes('about-owner')?'owner':path.includes('bed-bug-bordello')")
+app = app.replace("${page==='home'?home()+ownerSection():", "${page==='owner'?ownerSection():page==='home'?home():")
+app = app.replace('index.html#about-owner', 'about-owner.html')
+app = app.replace('document.title={', 'document.title={"owner":"About the owner | Patrick Forelli · The Neighbor’s Travel Guide",') if '"owner":"About the owner' not in app else app
 app_path.write_text(app, encoding='utf-8')
-
 for name in ['index.html', 'bed-bug-bordello.html', 'garland-gta.html']:
     path = DIST / name
-    text = path.read_text(encoding='utf-8')
-    def add_link(match):
-        nav = match.group(0)
-        return nav if nav_link in nav else nav.replace('</nav>', nav_link+'</nav>')
-    text = re.sub(r'<nav\b[^>]*>.*?</nav>', add_link, text, flags=re.S)
+    text = path.read_text(encoding='utf-8').replace('index.html#about-owner', 'about-owner.html')
     if name == 'index.html':
         text = re.sub(r'<section id="about-owner".*?</section>', '', text, flags=re.S)
-        text = text.replace('</main>', section+'</main>')
     path.write_text(text, encoding='utf-8')
-print(f'Refreshed owner section: {len(posts)} sourced photo posts.')
+# Use the established page shell, retaining a full static version for no-JS readers.
+text = (DIST / 'index.html').read_text(encoding='utf-8')
+text = re.sub(r'<main>.*?</main>', '<main>'+content+'</main>', text, flags=re.S)
+text = re.sub(r'<title>.*?</title>', '<title>About the owner | Patrick Forelli · The Neighbor’s Travel Guide</title>', text)
+text = text.replace('https://michaelwoodc.github.io/stvr-info-page/dist/"', 'https://michaelwoodc.github.io/stvr-info-page/dist/about-owner.html"')
+text = re.sub(r'<script type="application/ld\+json">.*?</script>', '', text, flags=re.S)
+text = text.replace('Independent neighbor commentary on Patrick Forelli vacation rentals in Savannah, GA. Airbnb and Vrbo guest reviews, property photos, videos and reports.', 'A satirical owner’s manual featuring sourced Patrick Forelli BiggerPockets excerpts and the Humans of Patrick photo album.')
+text = text.replace('content="Patrick Forelli Vacation Rentals | Savannah GA Airbnb &amp; Vrbo"', 'content="About the owner | Patrick Forelli · The Neighbor’s Travel Guide"')
+(DIST / 'about-owner.html').write_text(text, encoding='utf-8')
+print(f'Refreshed separate owner page: 7 verified forum stories and {len(posts)} photo posts.')
