@@ -78,7 +78,19 @@ def biggerpockets_section(root):
         url = source['url']
         posted = date.fromisoformat(source['dateCreated'][:10]).strftime('%B %d, %Y').replace(' 0', ' ')
         def format_quote(quote):
-            return html.escape(quote).replace('My parents have plenty of money', '<strong>My parents have plenty of money</strong>')
+            escaped = html.escape(quote)
+            emphasized_phrases = [
+                'my parents are interested in financing my down payment with a 5% interest rate',
+                'protect my parents assets',
+                'My parents have plenty of money',
+                'investing with family members',
+                'taking out a primary mortgage on their home to take out 350k in cash',
+                'I take out a loan from them',
+                'They are cutting me a good deal',
+            ]
+            for phrase in emphasized_phrases:
+                escaped = escaped.replace(html.escape(phrase), f'<strong>{html.escape(phrase)}</strong>')
+            return escaped
         excerpts = ''.join(f'<blockquote cite="{html.escape(url, quote=True)}"><p>“{format_quote(q)}”</p></blockquote>' for q in quotes)
         cards.append(f'''<article class="owner-story"><p class="eyebrow">Chapter {number:02d} / BiggerPockets</p><h3>{html.escape(title)}</h3>
 <p class="owner-joke"><span class="editorial-label">Travel guide commentary</span>{html.escape(joke)}</p>
