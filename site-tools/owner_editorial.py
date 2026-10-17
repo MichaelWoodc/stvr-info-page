@@ -41,16 +41,17 @@ def biggerpockets_section(root):
             'Is an LLC a secure, 100 % fool proof method to protect my parents assets?'
         ], 'The post asks about possible financing structures. It does not establish that the proposed loan closed.',
          'Introducing Bank of Mom & Dad: because “self-made” sounds better when you leave out the down payment. Mom and Dad supply the capital; three letters—LLC—are apparently interviewing for the job of protecting the family fortune.'),
+        ('Please hold all family-finance reviews.', '1180572-leverage-investors', [
+            'My parents have plenty of money and most of it is sitting in low risk investments such as money market accounts getting 4.5% interest.',
+            'Please hold the advice about investing with family members.',
+            'I understand everyone has their own opinions and preferences but please hold off judgement.'
+        ], 'In the same post, he requested feedback on loan financing and LLC asset protection while asking readers to withhold advice about investing with relatives.',
+         'Welcome to the advice forum. Please leave the advice in the designated advice-free area.'),
         ('The family home enters the group project.', '410916-subject-to', [
             'We were exploring taking out a primary mortgage on their home to take out 350k in cash at about a 6% interest rate, and I take out a loan from them at an equal rate or slightly higher (maybe 6.5%).',
             'They are cutting me a good deal and I am grateful.'
         ], 'He described an idea being explored with his parents, not a completed mortgage or purchase.',
          'Some family group chats plan Thanksgiving. This one appears to have a capital stack.'),
-        ('Please hold all family-finance reviews.', '1180572-leverage-investors', [
-            'Please hold the advice about investing with family members.',
-            'I understand everyone has their own opinions and preferences but please hold off judgement.'
-        ], 'In the same post, he requested feedback on loan financing and LLC asset protection while asking readers to withhold advice about investing with relatives.',
-         'Welcome to the advice forum. Please leave the advice in the designated advice-free area.'),
         ('The expertise comes with a preferred return.', '1173079-lp-gp-deal-structure', [
             'I am providing the industry knowledge and skill behind the investment.',
             'If the investment under performs, I am at fault, and if the investment over performs, I deserve the credit.'
@@ -76,7 +77,9 @@ def biggerpockets_section(root):
         source = candidates[0]
         url = source['url']
         posted = date.fromisoformat(source['dateCreated'][:10]).strftime('%B %d, %Y').replace(' 0', ' ')
-        excerpts = ''.join(f'<blockquote cite="{html.escape(url, quote=True)}"><p>“{html.escape(q)}”</p></blockquote>' for q in quotes)
+        def format_quote(quote):
+            return html.escape(quote).replace('My parents have plenty of money', '<strong>My parents have plenty of money</strong>')
+        excerpts = ''.join(f'<blockquote cite="{html.escape(url, quote=True)}"><p>“{format_quote(q)}”</p></blockquote>' for q in quotes)
         cards.append(f'''<article class="owner-story"><p class="eyebrow">Chapter {number:02d} / BiggerPockets</p><h3>{html.escape(title)}</h3>
 <p class="owner-joke"><span class="editorial-label">Travel guide commentary</span>{html.escape(joke)}</p>
 <div class="owner-excerpts"><p class="editorial-label">From the post · Patrick Forelli</p>{excerpts}</div>
