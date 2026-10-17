@@ -6,3 +6,5 @@ footer .footer-links{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:
 .video-screen video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
 
 .site-context{font-size:13px;max-width:650px;color:#58645c}
+
+#about-owner{scroll-margin-top:24px}.owner-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin-top:30px}.owner-card{margin:0;background:#e8e3d8;border:1px solid var(--line);border-radius:4px;overflow:hidden}.owner-card img{display:block;width:100%;height:360px;object-fit:contain}.owner-card figcaption{padding:22px}.owner-card blockquote{margin:0;font:18px/1.65 'Playfair Display',Georgia,serif;white-space:pre-line}.owner-card .source{margin-bottom:0}.owner-card cite{font-style:normal}.owner-card a{text-underline-offset:3px}@media(max-width:750px){.owner-gallery{grid-template-columns:1fr}.owner-card img{height:310px}}@media(max-width:420px){header{flex-direction:column}header nav{justify-content:flex-start}}

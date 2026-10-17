@@ -71,7 +71,7 @@ def network(address):
     if address.startswith('10.42.'):
         return 'Airbnb-wifi'
     if address.startswith('10.43.'):
-        return 'cozy-corner-rentals-wifi'
+        return 'cozy-corner-rentals'
     return 'Management LAN'
 
 def counts(db):

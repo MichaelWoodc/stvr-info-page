@@ -1,11 +1,11 @@
 # Airbnb-wifi Raspberry Pi captive portal
 
 Installed on the Raspberry Pi at `192.168.1.151` using Ethernet for management
-and internet access. The Pi's `wlan0` broadcasts an open 2.4 GHz network named
+and internet access. The Pi's `apbuilt` broadcasts an open 2.4 GHz network named
 **Airbnb-wifi**, on channel 6. Wi-Fi clients receive `10.42.0.20–10.42.0.200`.
 
 The TP-Link USB adapter broadcasts a second open network,
-**cozy-corner-rentals-wifi**, on channel 1, with addresses
+**cozy-corner-rentals**, on channel 1, with addresses
 `10.43.0.20–10.43.0.200` and portal `http://10.43.0.1/`. Both networks serve the
 same local site and block all internet access and access to each other.
 Both captive portals open **Bed Bug Bordello** directly by default. The site's
@@ -121,7 +121,7 @@ Over SSH:
 
 ```sh
 nmcli device status
-sudo iw dev wlan0 info
+sudo iw dev apbuilt info
 systemctl status nginx dnsmasq airbnb-wifi-firewall
 sudo journalctl -u dnsmasq -n 30
 sudo cat /var/lib/misc/dnsmasq.leases
@@ -132,9 +132,9 @@ To stop the hotspot and restore the previous Wi-Fi connection:
 
 ```sh
 sudo nmcli connection modify Airbnb-wifi connection.autoconnect no
-sudo nmcli connection modify cozy-corner-rentals-wifi connection.autoconnect no
+sudo nmcli connection modify cozy-corner-rentals connection.autoconnect no
 sudo nmcli connection down Airbnb-wifi
-sudo nmcli connection down cozy-corner-rentals-wifi
+sudo nmcli connection down cozy-corner-rentals
 sudo nmcli connection up netplan-wlan0-OpenWrt2.4
 sudo systemctl disable --now dnsmasq airbnb-wifi-firewall
 ```
@@ -154,3 +154,11 @@ Setup uses the [NetworkManager settings reference](https://networkmanager.pages.
 ### Complete offline videos
 
 The public sites embed YouTube directly. The Pi uses full local MP4s and does not provide guest internet access. Run `prepare-full-videos.py` before deployment: it copies the seven original MP4s from Downloads unchanged and uses `dist/assets/whitefield/Airbnb Brawl/zoomed and subtitled.mp4` for the fight. That source remains unchanged. The fight is reencoded at its original resolution with H.264/AAC, filling the initial 0.2-second video gap with the first frame so both tracks start at zero. No content is trimmed. Prepared video files are ignored by Git; keep the originals locally.
+
+### Reboot repair (October 14, 2026)
+
+The adapters previously swapped wlan0/wlan1 names at boot. They now use MAC-matched names apbuilt and apusb. Hotspot profiles are bound to their respective hardware addresses. The retained OpenWrt client profile has autoconnect disabled in Netplan so it cannot occupy a hotspot radio on startup. Configuration backups are under /root/airbnb-wifi-backup/reboot-fix-20261014-101623/.
+
+### Offline startup
+
+Nginx listens on wildcard port 8081 so the public portal can start without any Ethernet address. Admin access remains restricted by the LAN allowlist and hotspot firewall. Hotspot HTTP and ordinary UDP/TCP DNS requests are intercepted locally. HTTPS and encrypted DNS cannot be transparently redirected; use the phone's network sign-in prompt or an explicit http:// URL. Neither hotspot needs Ethernet or upstream internet.

@@ -27,10 +27,10 @@ nginx -t
 dnsmasq --test
 nft -c -f /etc/airbnb-wifi.nft
 if ! nmcli connection show Airbnb-wifi >/dev/null 2>&1; then
-    nmcli connection add type wifi ifname wlan0 con-name Airbnb-wifi ssid Airbnb-wifi
+    nmcli connection add type wifi ifname apbuilt con-name Airbnb-wifi ssid Airbnb-wifi
 fi
-nmcli connection modify Airbnb-wifi \
-    802-11-wireless.mode ap 802-11-wireless.band bg 802-11-wireless.channel 6 \
+nmcli connection modify Airbnb-wifi connection.interface-name apbuilt \
+    802-11-wireless.mode ap 802-11-wireless.band bg 802-11-wireless.channel 6 802-11-wireless.mac-address B8:27:EB:FA:FD:2B \
     802-11-wireless.ap-isolation yes \
     ipv4.method manual ipv4.addresses 10.42.0.1/24 ipv4.never-default yes \
     ipv6.method disabled connection.autoconnect yes connection.autoconnect-priority 999
@@ -44,6 +44,6 @@ systemctl restart airbnb-wifi-firewall.service
 nmcli connection up Airbnb-wifi
 systemctl enable nginx dnsmasq
 systemctl restart nginx dnsmasq
-if nmcli -g WIFI-PROPERTIES.AP device show wlan1 2>/dev/null | grep -qx yes; then
+if nmcli -g WIFI-PROPERTIES.AP device show apusb 2>/dev/null | grep -qx yes; then
     sh install-usb-hotspot.sh
 fi
